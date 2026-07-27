@@ -1,0 +1,25 @@
+# =============================================================================
+# Workflow: Code Style Check (West / AStyle)
+# =============================================================================
+#
+# Trigger:
+#   - workflow_dispatch: Manual trigger via GitHub UI
+#   - pull_request: On open, synchronize, or reopen targeting any branch
+#   - push to branches 'main', 'master', or 'dev'
+#
+# Function:
+#   Checks the code style of a Zephyr/West-based repository using
+#   'west format --dry-run'. Reports style violations without modifying files.
+#   Requires a West workspace (ZSWatch directory) to be present.
+#
+# Variables:
+#   (none)
+#
+# Secrets:
+#   (none)
+# =============================================================================
+
+name: Code Style Check
+        run: |
+          west format --dry-run
+
