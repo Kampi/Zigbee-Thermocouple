@@ -1,0 +1,6 @@
+menu "Zephyr Kernel"
+    source "Kconfig.zephyr"
+endmenu
+
+menu "Zigbee-Thermocouple"
+endmenu

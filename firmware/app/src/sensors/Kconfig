@@ -1,0 +1,3 @@
+module = ZIGBEE_THERMOCOUPLE_SENSORS
+module-str = ZIGBEE_THERMOCOUPLE_SENSORS
+source "subsys/logging/Kconfig.template.log_config"
