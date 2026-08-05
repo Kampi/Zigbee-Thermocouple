@@ -70,7 +70,7 @@ env:
   # PRELIMINARY: Will generate both schematic and PCB documents, but no ERC/DRC
   # CHECKED: Will generate both schematic and PCB documents, with ERC/DRC
   # RELEASED: Similar to CHECKED, automatically selected when pushing a tag to main
-  kibot_variant: DRAFT
+  kibot_variant: CHECKED
 
   # Master branch. Can be changed for testing
   master_branch: main
@@ -95,7 +95,7 @@ jobs:
   release:
     needs: generate_outputs
     runs-on: ubuntu-latest
-    container: ghcr.io/inti-cmnb/kicad10_auto_full:dev_1.9.1-7cc79bd_k10.0.5_d13.2_b4.2.4LTS
+    container: ghcr.io/inti-cmnb/kicad10_auto_full:dev_1.8.6-727a5c6_k10.0.1_d13.2_b4.2.4lts
 
     if: github.ref_type == 'tag'
     steps:
@@ -140,7 +140,7 @@ jobs:
 
   generate_outputs:
     runs-on: ubuntu-latest
-    container: ghcr.io/inti-cmnb/kicad10_auto_full:dev_1.9.1-7cc79bd_k10.0.5_d13.2_b4.2.4LTS
+    container: ghcr.io/inti-cmnb/kicad10_auto_full:dev_1.8.6-727a5c6_k10.0.1_d13.2_b4.2.4lts
 
     if: "!contains(github.event.head_commit.message, 'Merge pull request') || github.ref_type == 'tag'"
     steps:
@@ -319,6 +319,8 @@ jobs:
         with:
           name: Log-${{ env.kibot_variant }}.zip
           path: log
+          retention-days: 7
+          compression-level: 6
 
       - name: Clean up
         shell: bash
@@ -336,6 +338,8 @@ jobs:
           name: ${{ env.kibot_variant }}.zip
           path: production
           if-no-files-found: ignore
+          retention-days: 7
+          compression-level: 6
 
       - name: Upload updated CHANGELOG
         if: ${{ github.ref_type == 'tag' }}
@@ -343,6 +347,8 @@ jobs:
         with:
           name: CHANGELOG.md
           path: ${{ env.kibot_input_dir }}/CHANGELOG.md
+          retention-days: 7
+          compression-level: 6
 
       - name: Pull latest changes
         shell: bash
