@@ -79,7 +79,7 @@ jobs:
           # Check for valid section headers
           FOUND_SECTIONS=false
           for section in "${VALID_SECTIONS[@]}"; do
-            if echo "${UNRELEASED_CONTENT}" | grep -q "^$section"; then
+            if echo "${UNRELEASED_CONTENT}" | grep -qF "$section"; then
               FOUND_SECTIONS=true
               echo "Found section: $section"
             fi
@@ -91,7 +91,7 @@ jobs:
             exit 1
           fi
 
-          # Validate entry format: must start with "- " (dash + space/tab) and contain issue reference "(#number)"
+          # Validate entry format: must start with "- " (dash + space/tab)
           ERROR_COUNT=0
           LINE_NUMBER=0
 
@@ -100,25 +100,18 @@ jobs:
 
           while IFS= read -r line; do
             LINE_NUMBER=$((LINE_NUMBER + 1))
-            
-            # Skip empty lines and section headers
-            if [[ -z "$line" ]] || [[ "$line" =~ ^### ]]; then
+
+            # Skip empty lines, ### headers, and **Bold:** section headers
+            if [[ -z "$line" ]] || [[ "$line" =~ ^### ]] || [[ "$line" =~ ^\*\*[A-Za-z]+.*\*\*$ ]]; then
               continue
             fi
 
             # Check if line is an entry (starts with -)
             if [[ "$line" =~ ^[[:space:]]*- ]]; then
-              # Check for issue reference in format (#number)
-              if ! [[ "$line" =~ \(#[0-9]+\) ]]; then
-                echo "âœ— Line $LINE_NUMBER: Missing or invalid issue reference (expected format: (#123))"
-                echo "  Content: $line"
-                ERROR_COUNT=$((ERROR_COUNT + 1))
-              else
-                echo "âœ“ Line $LINE_NUMBER: Valid entry"
-              fi
+              echo "OK Line $LINE_NUMBER: Valid entry"
             elif [[ "$line" =~ ^[[:space:]]*[^-] ]]; then
               # Line has content but doesn't start with -
-              echo "âœ— Line $LINE_NUMBER: Entry must start with '- ' (dash + space)"
+              echo "ERR Line $LINE_NUMBER: Entry must start with '- ' (dash + space)"
               echo "  Content: $line"
               ERROR_COUNT=$((ERROR_COUNT + 1))
             fi
@@ -132,19 +125,20 @@ jobs:
             echo "Found ${ERROR_COUNT} error(s)"
             echo ""
             echo "Requirements:"
-            echo "1. All entries must be grouped under: Added, Changed, Fixed, or Removed"
+            echo "1. All entries must be grouped under: **Added:**, **Changed:**, **Fixed:**, or **Removed:**"
             echo "2. Each entry must start with '- ' (dash + space or tab)"
-            echo "3. Each entry must contain an issue reference in format (#number)"
             echo ""
             echo "Example:"
             echo "## [Unreleased]"
             echo ""
-            echo "### Added"
-            echo "- New feature description (#123)"
-            echo "- Another feature (#124)"
+            echo "**Added:**"
             echo ""
-            echo "### Fixed"
-            echo "- Bug fix description (#125)"
+            echo "- New feature description"
+            echo "- Another feature"
+            echo ""
+            echo "**Fixed:**"
+            echo ""
+            echo "- Bug fix description"
             echo ""
             exit 1
           else

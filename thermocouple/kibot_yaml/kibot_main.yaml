@@ -56,7 +56,7 @@ groups:
       - @PDF_SCHEMATIC_OUTPUT@
       - @MD_README_OUTPUT@
       - @HTML_NAV_RES_OUTPUT@
-      - @HTML_KIRI_OUTPUT@
+#      - @HTML_KIRI_OUTPUT@
 
   - name: draft_group
     outputs:
@@ -71,7 +71,7 @@ groups:
       - @GERBER_OUTPUT@
       - @ODB_OUTPUT@
       - @EXCELLON_DRILL_OUTPUT@
-    # - @DXF_DRILL_MAP_OUTPUT@
+#     - @DXF_DRILL_MAP_OUTPUT@
       - @PDF_DRILL_MAP_OUTPUT@
       - @PDF_FABRICATION_OUTPUT@
       - @ZIP_COMPRESS_FAB_OUTPUT@
