@@ -764,15 +764,15 @@
     "COMPANY": "Kampis-Elektroecke",
     "DESIGNER": "Daniel Kampert",
     "FABRICATION_NOTES": "",
-    "GIT_HASH_PCB": "76482e5",
-    "GIT_HASH_SCH": "90bf5bf",
+    "GIT_HASH_PCB": "680ce80",
+    "GIT_HASH_SCH": "d473842",
     "GIT_URL": "https://github.com/Kampi/Zigbee-Thermocouple",
     "PCB_VARIANT": "PRELIMINARY",
     "PROJECT_NAME": "Zigbee-Thermocouple",
     "RELEASE_BODY_2.2.0": "Version 2.2.0 not found.",
     "RELEASE_BODY_UNRELEASED": "Version Unreleased not found.",
-    "RELEASE_DATE": "2026-08-05",
-    "RELEASE_DATE_NUM": "2026-08-05",
+    "RELEASE_DATE": "2026-08-07",
+    "RELEASE_DATE_NUM": "2026-08-07",
     "RELEASE_TITLE_2.2.0": "Version 2.2.0 not found.",
     "RELEASE_TITLE_UNRELEASED": "Version Unreleased not found.",
     "REVISION": "",
@@ -816,7 +816,7 @@
     "SHEET_NAME_7": "......................................",
     "SHEET_NAME_8": "......................................",
     "SHEET_NAME_9": "......................................",
-    "VARIANT": "CHECKED"
+    "VARIANT": "RELEASED"
   },
   "tuning_profiles": {
     "meta": {
