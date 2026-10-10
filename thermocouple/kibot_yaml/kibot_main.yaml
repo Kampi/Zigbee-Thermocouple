@@ -71,7 +71,7 @@ groups:
       - @GERBER_OUTPUT@
       - @ODB_OUTPUT@
       - @EXCELLON_DRILL_OUTPUT@
-#     - @DXF_DRILL_MAP_OUTPUT@
+    # - @DXF_DRILL_MAP_OUTPUT@
       - @PDF_DRILL_MAP_OUTPUT@
       - @PDF_FABRICATION_OUTPUT@
       - @ZIP_COMPRESS_FAB_OUTPUT@
@@ -519,11 +519,11 @@ import:
       DIR: KiCanvas
 
   # Generate webpage with diffs between commits
-  #- file: kibot_out_html_kiri.yaml
-  #  definitions:
-  #    NAME: @HTML_KIRI_OUTPUT@
-  #    COMMENT: KiRI webpage
-  #    DIR: KiRI
+#  - file: kibot_out_html_kiri.yaml
+#    definitions:
+#      NAME: @HTML_KIRI_OUTPUT@
+#      COMMENT: KiRI webpage
+#      DIR: KiRI
 
   # README.md file generation
   - file: kibot_out_md_report.yaml
@@ -696,4 +696,3 @@ definitions:
   HTML_KIRI_OUTPUT: html_kiri
   MD_README_OUTPUT: md_readme
   HTML_NAV_RES_OUTPUT: html_navigate_results
-

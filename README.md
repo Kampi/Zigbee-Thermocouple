@@ -1,7 +1,7 @@
 ﻿# Zigbee-Thermocouple
 
 [![License](https://img.shields.io/badge/License-GPL%203.0-blue.svg)](https://opensource.org/license/gpl-3-0/)
-[![PCB](https://github.com/Kampi/Zigbee-Thermocouple/actions/workflows/pcb.yaml/badge.svg)](https://github.com/Kampi/Zigbee-Thermocouple/actions/workflows/pcb.yaml)
+[![PCB](https://github.com/Kampi/Zigbee-Thermocouple/actions/workflows/hw-pcb.yaml/badge.svg)](https://github.com/Kampi/Zigbee-Thermocouple/actions/workflows/hw-pcb.yaml)
 [![Documentation](https://img.shields.io/badge/Documentation-HTML-007ec6?longCache=true&style=flat&logo=asciidoctor&colorA=555555)](https://Kampi.github.io/Zigbee-Thermocouple/)
 
 ## Table of Contents
