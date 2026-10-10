@@ -1,17 +1,24 @@
-﻿# =============================================================================
+# =============================================================================
 # Workflow: PCB
 # =============================================================================
 #
 # Trigger:
 #   - workflow_dispatch: Manual trigger via GitHub UI
-#   - push to branches 'main' or 'dev' (excluding *.md changes)
+#   - push to branch 'dev' or a development branch 'x.y.z_Dev' / 'x.y_Dev'
+#     (only when the hardware directory or this file change)
 #   - push of a tag matching semantic versioning (e.g. 1.0.0)
+#   A push to the main branch does not start the workflow. The main branch only
+#   receives releases, which are built by the tag. This also keeps GitHub Pages
+#   at the state of the latest release.
 #
 # Function:
 #   Generates KiCad PCB project outputs using KiBot (schematics, Gerbers, BoM,
 #   3D models, cost estimation, etc.) and handles the full release process:
-#     - generate_outputs: Runs KiBot to produce all documents and artifacts,
-#       updates the CHANGELOG on tag pushes, and commits outputs back to the branch.
+#     - generate_outputs: Runs KiBot to produce all documents and uploads them as
+#       workflow artifact. The outputs are not committed to the repository. Only
+#       the netlist XML of the schematic is pushed back to the branch, because the
+#       next run reads the sheet titles from it. On tag pushes the CHANGELOG is
+#       updated and committed to the main branch.
 #     - release: Creates a GitHub Release with the generated ZIP artifact.
 #       Only runs on tag pushes.
 #     - deploy: Publishes the generated outputs to GitHub Pages.
@@ -24,8 +31,9 @@
 #   kibot_output_path   - Root output path for KiBot results
 #   kibot_input_dir     - Directory containing the KiCad project and KiBot files
 #   kibot_variant       - Active KiBot variant (DRAFT / PRELIMINARY / CHECKED / RELEASED).
-#                         Set to PRELIMINARY by init_release.yaml when a *_Dev branch
-#                         is created. Automatically overridden to RELEASED on tag pushes.
+#                         Set to PRELIMINARY by the create-dev-branch skill and to CHECKED
+#                         by the create-release skill. Automatically overridden to RELEASED
+#                         on tag pushes.
 #   master_branch       - Name of the main branch (main or master)
 #
 # Secrets:
@@ -33,21 +41,22 @@
 #   GITHUB_TOKEN        - Automatically provided by GitHub Actions (read/write contents)
 # =============================================================================
 
-name: PCB Data
+name: Hardware / PCB Data
 
 on:
   workflow_dispatch:
   push:
     tags:
       - '[0-9]+.[0-9]+.[0-9]+' # Match semantic versioning tags
+    # No main branch: a release is built by its tag, not by the merge
     branches:
-      - main
-      - master
       - dev
       - '[0-9]*.[0-9]*.[0-9]*_Dev'
       - '[0-9]*.[0-9]*_Dev'
-    paths-ignore:
-      - '*.md'
+    # Not evaluated for tag pushes, a version tag always starts the release
+    paths:
+      - 'thermocouple/**'
+      - '.github/workflows/hw-pcb.yaml'
 
 env:
   # Name of the KiCad PCB file
@@ -70,7 +79,7 @@ env:
   # PRELIMINARY: Will generate both schematic and PCB documents, but no ERC/DRC
   # CHECKED: Will generate both schematic and PCB documents, with ERC/DRC
   # RELEASED: Similar to CHECKED, automatically selected when pushing a tag to main
-  kibot_variant: CHECKED
+  kibot_variant: PRELIMINARY
 
   # Master branch. Can be changed for testing
   master_branch: main
@@ -95,7 +104,7 @@ jobs:
   release:
     needs: generate_outputs
     runs-on: ubuntu-latest
-    container: ghcr.io/inti-cmnb/kicad10_auto_full:dev_1.8.6-727a5c6_k10.0.1_d13.2_b4.2.4lts
+    container: ghcr.io/inti-cmnb/kicad10_auto_full:latest
 
     if: github.ref_type == 'tag'
     steps:
@@ -140,7 +149,7 @@ jobs:
 
   generate_outputs:
     runs-on: ubuntu-latest
-    container: ghcr.io/inti-cmnb/kicad10_auto_full:dev_1.8.6-727a5c6_k10.0.1_d13.2_b4.2.4lts
+    container: ghcr.io/inti-cmnb/kicad10_auto_full:latest
 
     if: "!contains(github.event.head_commit.message, 'Merge pull request') || github.ref_type == 'tag'"
     steps:
@@ -170,6 +179,15 @@ jobs:
           git clone https://github.com/Kampi/KiCad.git kicad-library
           echo "KICAD_LIBRARY=$(pwd)/kicad-library" >> ${GITHUB_ENV}
 
+      # KiCost from master contains the fix for the Mouser API rate limit (hildogjr/KiCost#587)
+      - name: Install KiCost from repository
+        shell: bash
+        run: |
+          dpkg --remove kicost
+          apt-get update
+          apt-get -y install --no-install-recommends python3-pip
+          pip3 install --break-system-packages https://github.com/hildogjr/KiCost/archive/refs/heads/master.zip
+
       - name: Extract release notes
         if: ${{ github.ref_type == 'tag' }}
         uses: ffurrer2/extract-release-notes@v2
@@ -195,7 +213,7 @@ jobs:
           # Get the previous tag (all SemVer tags, excluding the current one)
           prev_tag=$(git tag --sort=-version:refname | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' | grep -v "^${current_tag}$" | head -1 || true)
 
-          python3 ./scripts/python/update_changelog_links.py \
+          python3 ./scripts/python/update-changelog-links.py \
             --file "${changelog_file}" \
             --tag "${current_tag}" \
             --prev-tag "${prev_tag}" \
@@ -297,21 +315,47 @@ jobs:
               echo -e "${YELLOW}Warning: Unable to determine version from CHANGELOG.md. Defaulting to empty revision.${NC}"
               revision=""
           fi
-          # Run KiCost multiple times to work around the Mouser API rate limit
-          # (30 calls/minute, 1 call/part). Each run caches results; subsequent
-          # runs only query the remaining uncached parts.
-          for ((attempt=1; attempt<=10; attempt++)); do
-            echo "--- KiCost attempt ${attempt}/3 ---"
+          # KiCost waits for the Mouser API rate limit itself (30 calls/minute, 1 call/part).
+          # The run is only repeated if parts are still missing afterwards. Each run caches
+          # its results, the next run only queries the remaining parts. The loop ends as soon
+          # as a run has no missing parts or finds nothing new. Without an API key there is
+          # nothing to retry.
+          max_attempts=5
+          if [[ -z "${MOUSER_KEY}${DIGIKEY_KEY}${TME_KEY}${RS_KEY}${FARNELL_KEY}" ]]; then
+            echo "No distributor API key set, running KiCost once"
+            max_attempts=1
+          fi
+
+          attempt_log=$(mktemp)
+          previous_missing=-1
+          for ((attempt=1; attempt<=max_attempts; attempt++)); do
+            echo "--- KiCost attempt ${attempt}/${max_attempts} ---"
             kibot -vvvv --skip-pre erc,drc,draw_fancy_stackup -c kibot_yaml/kibot_main.yaml \
               -d ${{ env.kibot_output_path }}/${{ env.kibot_output_dir }}-${{ env.kibot_variant }} \
               -g variant=${{ env.kibot_variant }} \
               -E KICOST_CONFIG=kibot_yaml/kicost_config_local.yaml xlsx_bom \
-              2>> ../log/kicost_output.log || true
-            if [[ ${attempt} -lt 3 ]]; then
+              2> "${attempt_log}" || true
+            cat "${attempt_log}" >> ../log/kicost_output.log
+
+            missing=$(grep -c "No information found at" "${attempt_log}" || true)
+            echo "Parts without distributor information: ${missing}"
+
+            if [[ ${missing} -eq 0 ]]; then
+              echo "All parts found"
+              break
+            fi
+            if [[ ${missing} -eq ${previous_missing} ]]; then
+              echo "No new parts found, the remaining parts are not available"
+              break
+            fi
+            previous_missing=${missing}
+
+            if [[ ${attempt} -lt ${max_attempts} ]]; then
               echo "Waiting 61s for Mouser API rate limit to reset..."
               sleep 61
             fi
           done
+          rm -f "${attempt_log}"
 
       - name: Upload artifacts (logs)
         uses: actions/upload-artifact@v4
@@ -319,8 +363,6 @@ jobs:
         with:
           name: Log-${{ env.kibot_variant }}.zip
           path: log
-          retention-days: 7
-          compression-level: 6
 
       - name: Clean up
         shell: bash
@@ -337,9 +379,7 @@ jobs:
         with:
           name: ${{ env.kibot_variant }}.zip
           path: production
-          if-no-files-found: ignore
-          retention-days: 7
-          compression-level: 6
+          if-no-files-found: error
 
       - name: Upload updated CHANGELOG
         if: ${{ github.ref_type == 'tag' }}
@@ -347,44 +387,24 @@ jobs:
         with:
           name: CHANGELOG.md
           path: ${{ env.kibot_input_dir }}/CHANGELOG.md
-          retention-days: 7
-          compression-level: 6
 
-      - name: Pull latest changes
+      # The netlist XML is generated by the 'update_xml' preflight and read by
+      # 'get_sheet_title.py' during the next run, so it must be part of the repository.
+      - name: Push netlist XML
+        if: ${{ github.ref_type != 'tag' }}
         shell: bash
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "GitHub Actions"
 
-          if [[ "${{ github.ref_type }}" == "tag" ]]; then
-            echo "Triggered by a tag, committing changes in detached HEAD state"
-            git add -A
-            git commit -m "Update outputs (release)"
-
-            DETACHED_COMMIT=$(git rev-parse HEAD)
-            echo "Checking out the ${{ env.master_branch }} branch"
-            git fetch origin ${{ env.master_branch }}
-            git checkout ${{ env.master_branch }}
-
-            echo "Merging detached HEAD commit into ${{ env.master_branch }}"
-            git merge --no-ff $DETACHED_COMMIT -m "Merge outputs from tag-triggered workflow" -X theirs
-            echo "Pushing to ${{ env.master_branch }} branch"
-            git push origin ${{ env.master_branch }}
+          git add "${{ env.kibot_input_dir }}"/*.xml || echo "::warning::No netlist XML generated"
+          if git diff --cached --quiet; then
+            echo "Netlist XML unchanged"
           else
-            echo "Triggered by a branch, using the current branch"
-            git pull origin ${{ github.ref_name }} --tags --force
+            git commit -m "Update netlist XML from CI/CD (${{ env.DATE }})"
+            git pull --rebase --autostash origin "${{ github.ref_name }}"
+            git push origin "HEAD:${{ github.ref_name }}"
           fi
-
-      - name: Discard changes to .kicad_pcb files and remove temp files
-        shell: bash
-        run: |
-          git checkout HEAD -- *.kicad_pcb
-
-      - name: Push outputs
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          branch: ${{ github.ref_name }}
-          commit_message: Push outputs from CI/CD (${{ env.DATE }})
 
   deploy:
     needs: generate_outputs
@@ -399,7 +419,8 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
-    if: github.ref_type == 'tag' || github.ref_name == 'main' || github.ref_name == 'master'
+    # Pages always shows the latest release
+    if: github.ref_type == 'tag'
     steps:
       - name: Determine variant
         shell: bash
@@ -440,4 +461,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-

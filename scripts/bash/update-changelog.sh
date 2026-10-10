@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# changelog_automation.sh - Git commit-msg hook for automatic CHANGELOG.md updates
+# update-changelog.sh - Git commit-msg hook for automatic CHANGELOG.md updates
 #
 # Usage:
 #   Called automatically by Git as a commit-msg hook.
