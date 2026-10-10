@@ -4226,12 +4226,6 @@
 		(uuid "c046f0d9-07d4-4e2e-bbbd-880b5c64733e")
 	)
 	(junction
-		(at 151.13 101.6)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d3fb4109-9085-40a8-bb28-27250c450bae")
-	)
-	(junction
 		(at 281.94 144.78)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4667,16 +4661,6 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 101.6) (xy 181.61 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "82bb83a7-3666-441e-8ce4-c75bb5e87b53")
-	)
-	(wire
-		(pts
 			(xy 274.32 74.93) (xy 287.02 74.93)
 		)
 		(stroke
@@ -4947,6 +4931,16 @@
 	)
 	(wire
 		(pts
+			(xy 151.13 99.06) (xy 151.13 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d728f758-252e-49f8-90f4-a2fdb3e71c6c")
+	)
+	(wire
+		(pts
 			(xy 213.36 83.82) (xy 219.71 83.82)
 		)
 		(stroke
@@ -4957,23 +4951,13 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 101.6) (xy 151.13 101.6)
+			(xy 125.73 101.6) (xy 181.61 101.6)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "da8747fd-33f9-4066-a28c-b806e0f44bf6")
-	)
-	(wire
-		(pts
-			(xy 151.13 101.6) (xy 151.13 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "de108302-eb60-4926-919f-801af6f843c5")
 	)
 	(wire
 		(pts
@@ -5154,6 +5138,16 @@
 			(justify left bottom)
 		)
 		(uuid "621fdb6d-520b-4d61-b9e9-bcf1050e7366")
+	)
+	(label "VSYS"
+		(at 151.13 99.06 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "74ffb8e6-569a-46fc-9e39-5d39d437ef1d")
 	)
 	(label "VSYS"
 		(at 302.26 74.93 0)
@@ -5429,17 +5423,6 @@
 				)
 			)
 		)
-		(property "Config" ""
-			(at 181.61 106.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Part-DB URL" "https://inventory.lan/de/part/349/info"
 			(at 181.61 106.68 0)
 			(hide yes)
@@ -5656,17 +5639,6 @@
 			)
 		)
 		(property "mouser#" "581-0805X7R106KT1AT"
-			(at 281.94 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Config" ""
 			(at 281.94 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -5936,7 +5908,7 @@
 				)
 			)
 		)
-		(property "Value" "590R"
+		(property "Value" "4k7"
 			(at 179.07 138.43 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5990,7 +5962,7 @@
 				)
 			)
 		)
-		(property "manf#" "CR0805-FX-5900ELF"
+		(property "manf#" "CR0805-JW-472ELF"
 			(at 179.07 142.24 0)
 			(hide yes)
 			(show_name no)
@@ -6001,7 +5973,7 @@
 				)
 			)
 		)
-		(property "mouser#" "652-CR0805-FX-5900ELF"
+		(property "mouser#" "652-CR0805JW-472ELF"
 			(at 179.07 142.24 0)
 			(hide yes)
 			(show_name no)
@@ -6438,17 +6410,6 @@
 			)
 		)
 		(property "mouser#" "581-0805X7R106KT1AT"
-			(at 287.02 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Config" ""
 			(at 287.02 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -7071,17 +7032,6 @@
 				)
 			)
 		)
-		(property "Config" ""
-			(at 271.78 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "86afd3a2-b327-4b23-9a0d-d562d8dfd0f1")
 		)
@@ -7131,7 +7081,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal"
+		(property "Footprint" "Connector_JST:JST_PH_B2B-PH-SM4-TB_1x02-1MP_P2.00mm_Vertical"
 			(at 248.92 82.55 0)
 			(hide yes)
 			(show_name no)
@@ -7176,6 +7126,17 @@
 			)
 		)
 		(property "manf#" "S2B-PH-Sm4-TB"
+			(at 248.92 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "mouser#" ""
 			(at 248.92 82.55 0)
 			(hide yes)
 			(show_name no)
@@ -7662,17 +7623,6 @@
 				)
 			)
 		)
-		(property "Config" ""
-			(at 274.32 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Part-DB URL" "https://inventory.lan/de/part/331/info"
 			(at 274.32 80.01 0)
 			(hide yes)
@@ -7888,7 +7838,7 @@
 				)
 			)
 		)
-		(property "Value" "430R"
+		(property "Value" "3k3"
 			(at 163.83 133.35 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7942,7 +7892,7 @@
 				)
 			)
 		)
-		(property "manf#" "CR0805-FX-4300ELF"
+		(property "manf#" "CR0805-JW-332ELF"
 			(at 163.83 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -7953,7 +7903,7 @@
 				)
 			)
 		)
-		(property "mouser#" "652-CR0805-FX-4300ELF"
+		(property "mouser#" "652-CR0805-JW-332ELF"
 			(at 163.83 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -8070,17 +8020,6 @@
 			)
 		)
 		(property "mouser#" "963-T21GCB7225MTPA1J"
-			(at 229.87 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Config" ""
 			(at 229.87 87.63 0)
 			(hide yes)
 			(show_name no)
@@ -8506,7 +8445,7 @@
 				)
 			)
 		)
-		(property "Value" "430R"
+		(property "Value" "10k"
 			(at 171.45 135.89 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8560,7 +8499,7 @@
 				)
 			)
 		)
-		(property "manf#" "CR0805-FX-4300ELF"
+		(property "manf#" "CR0805-FX-1002ELF"
 			(at 171.45 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -8571,7 +8510,7 @@
 				)
 			)
 		)
-		(property "mouser#" "652-CR0805-FX-4300ELF"
+		(property "mouser#" "652-CR0805FX-1002ELF"
 			(at 171.45 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -8842,17 +8781,6 @@
 			)
 		)
 		(property "mouser#" "581-08055C104K4Z4A"
-			(at 205.74 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Config" ""
 			(at 205.74 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -9220,17 +9148,6 @@
 				)
 			)
 		)
-		(property "Config" ""
-			(at 300.99 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Part-DB URL" "https://inventory.lan/de/part/331/info"
 			(at 300.99 80.01 0)
 			(hide yes)
@@ -9433,17 +9350,6 @@
 			)
 		)
 		(property "mouser#" "640-USB4110-GF-A"
-			(at 110.49 116.84 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Config" ""
 			(at 110.49 116.84 0)
 			(hide yes)
 			(show_name no)
