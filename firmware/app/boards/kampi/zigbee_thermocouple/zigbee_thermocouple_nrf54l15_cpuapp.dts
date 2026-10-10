@@ -1,0 +1,115 @@
+/*
+ * Copyright (c) 2026 Daniel Kampert
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/dts-v1/;
+
+#include <nordic/nrf54l15_cpuapp.dtsi>
+#include "zigbee_thermocouple_nrf54l15_cpuapp-pinctrl.dtsi"
+
+/ {
+    model = "Zigbee-Thermocouple nRF54L15 Application";
+    compatible = "kampi,zigbee-thermocouple-nrf54l15-cpuapp";
+
+    chosen {
+        zephyr,flash-controller = &rram_controller;
+        zephyr,flash = &cpuapp_rram;
+        zephyr,code-partition = &slot0_partition;
+        zephyr,sram = &cpuapp_sram;
+        zephyr,ieee802154 = &ieee802154;
+        ncs,zigbee-timer = &timer20;
+    };
+
+    aliases {
+        watchdog0 = &wdt31;
+    };
+};
+
+/* The FLPR core is not used, so the application core gets the full RRAM and SRAM */
+&cpuapp_rram {
+    reg = <0x0 DT_SIZE_K(1524)>;
+};
+
+&cpuapp_sram {
+    status = "okay";
+    reg = <0x20000000 DT_SIZE_K(256)>;
+    ranges = <0x0 0x20000000 0x40000>;
+};
+
+/* 32 MHz crystal of the BM15C module */
+&hfxo {
+    load-capacitors = "internal";
+    load-capacitance-femtofarad = <15000>;
+};
+
+&regulators {
+    status = "okay";
+};
+
+/* The inductors for the DC/DC converter are part of the BM15C module */
+&vregmain {
+    status = "okay";
+    regulator-initial-mode = <NRF5X_REG_MODE_DCDC>;
+};
+
+&grtc {
+    owned-channels = <0 1 2 3 4 5 6 7 8 9 10 11>;
+    /* Channels 7-11 reserved for Zero Latency IRQs, 3-4 for FLPR */
+    child-owned-channels = <3 4 7 8 9 10 11>;
+    status = "okay";
+};
+
+&gpio0 {
+    status = "okay";
+};
+
+&gpio1 {
+    status = "okay";
+};
+
+&gpio2 {
+    status = "okay";
+};
+
+&gpiote20 {
+    status = "okay";
+};
+
+&gpiote30 {
+    status = "okay";
+};
+
+&radio {
+    status = "okay";
+};
+
+&ieee802154 {
+    status = "okay";
+};
+
+&temp {
+    status = "okay";
+};
+
+&clock {
+    status = "okay";
+};
+
+&timer20 {
+    status = "okay";
+};
+
+/* P0 belongs to the low power domain, so only the serial instance 30 can be used here */
+&i2c30 {
+    status = "disabled";
+    /* The MCP9600 supports a maximum of 100 kHz */
+    clock-frequency = <I2C_BITRATE_STANDARD>;
+    pinctrl-0 = <&i2c30_default>;
+    pinctrl-1 = <&i2c30_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+/* Include default memory partition configuration file */
+#include <vendor/nordic/nrf54l15_cpuapp_partition.dtsi>

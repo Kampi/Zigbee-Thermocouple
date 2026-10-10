@@ -1,0 +1,82 @@
+/*
+ * Copyright (c) 2026 Daniel Kampert
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <zephyr/dt-bindings/regulator/npm13xx.h>
+#include <zephyr/dt-bindings/sensor/mcp9600.h>
+
+/ {
+    buttons {
+        compatible = "gpio-keys";
+
+        button0: button_0 {
+            gpios = <&gpio1 14 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+            label = "Join button";
+            zephyr,code = <INPUT_KEY_0>;
+        };
+    };
+
+    aliases {
+        sw0 = &button0;
+        mcuboot-button0 = &button0;
+    };
+};
+
+&i2c30 {
+    status = "okay";
+
+    /* ALERT-1 is connected to P1.04 (active low, external pull-up). Not used by the driver. */
+    mcp9600: mcp9600@60 {
+        compatible = "microchip,mcp9600";
+        reg = <0x60>;
+        thermocouple-type = <MCP9600_DT_TYPE_K>;
+        adc-resolution = <MCP9600_DT_ADC_RES_18BIT>;
+        filter-coefficient = <0>;
+        cold-junction-temp-resolution = <MCP9600_DT_COLD_JUNC_TMP_RES_0_0625C>;
+    };
+
+    /*
+     * GPIO4 (PMIC-INT) is connected to P2.00. Port 2 has no GPIOTE, so this pin
+     * can not be used as "host-int-gpios".
+     */
+    npm1300: pmic@6b {
+        compatible = "nordic,npm1300";
+        reg = <0x6b>;
+
+        npm1300_regulators: regulators {
+            compatible = "nordic,npm1300-regulator";
+
+            /* +3V0 system supply. The voltage is selected by the resistor on VSET2. */
+            npm1300_buck2: BUCK2 {
+                regulator-min-microvolt = <1000000>;
+                regulator-max-microvolt = <3300000>;
+                regulator-always-on;
+                regulator-boot-on;
+            };
+        };
+
+        npm1300_charger: charger {
+            compatible = "nordic,npm1300-charger";
+            term-microvolt = <4200000>;
+            term-warm-microvolt = <4000000>;
+            current-microamp = <150000>;
+            dischg-limit-microamp = <1000000>;
+            vbus-limit-microamp = <500000>;
+            /* No NTC connected */
+            thermistor-ohms = <0>;
+            thermistor-beta = <3380>;
+            charging-enable;
+        };
+
+        /* RGB status LED: LED0 = blue, LED1 = green, LED2 = red */
+        npm1300_leds: leds {
+            compatible = "nordic,npm1300-led";
+            nordic,led0-mode = "host";
+            nordic,led1-mode = "charging";
+            nordic,led2-mode = "error";
+        };
+    };
+};

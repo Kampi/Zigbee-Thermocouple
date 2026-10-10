@@ -1,0 +1,29 @@
+{
+    "folders": [
+        {
+            "name": "Zigbee-Thermocouple",
+            "path": ".."
+        }
+    ],
+    "extensions": {
+        "recommendations": [
+            "nordic-semiconductor.nrf-connect-extension-pack",
+            "ms-vscode.cpptools",
+            "twxs.cmake",
+            "redhat.vscode-yaml",
+            "davidanson.vscode-markdownlint",
+            "github.vscode-github-actions"
+        ]
+    },
+    "settings": {
+        "nrf-connect.applications": [
+            "${workspaceFolder:Zigbee-Thermocouple}/firmware/app"
+        ],
+        "nrf-connect.boardRoots": [
+            "${workspaceFolder:Zigbee-Thermocouple}/firmware/app"
+        ],
+        "terminal.integrated.defaultProfile.linux": "Zephyr IDE Terminal",
+        "C_Cpp.default.compileCommands": "${workspaceFolder}/.vscode/compile_commands.json",
+        "cmake.configureOnOpen": false
+    }
+}

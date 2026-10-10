@@ -1,0 +1,47 @@
+manifest:
+    self:
+        west-commands: scripts/west-commands.yml
+
+    remotes:
+        - name: ncs
+          url-base: https://github.com/nrfconnect
+
+    projects:
+        # Zigbee R23 add-on. Each release is tied to one NCS release, so keep
+        # both revisions in sync (see west.yml in the ncs-zigbee repository).
+        - name: ncs-zigbee
+          remote: ncs
+          revision: v1.4.0
+
+        - name: nrf
+          remote: ncs
+          repo-path: sdk-nrf
+          revision: v3.4.0
+          import:
+              name-blocklist:
+                  - azure-sdk-for-c
+                  - canopennode
+                  - chre
+                  - cirrus
+                  - dhara
+                  - edtt
+                  - fatfs
+                  - hal_st
+                  - hal_tdk
+                  - hal_wurthelektronik
+                  - hostap
+                  - liblc3
+                  - libsbc
+                  - loramac-node
+                  - lvgl
+                  - matter
+                  - memfault-firmware-sdk
+                  - net-tools
+                  - nrf_wifi
+                  - openthread
+                  - percepio
+                  - psa-arch-tests
+                  - tf-m-tests
+                  - uoscore-uedhoc
+                  - wfa-qt-control-app
+                  - zscilib

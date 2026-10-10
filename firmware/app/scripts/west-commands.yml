@@ -1,0 +1,12 @@
+west-commands:
+    - file: scripts/upload-config.py
+      commands:
+          - name: upload-config
+            class: UploadConfigWestCommand
+            help: Upload the production config to a sensor.
+
+    - file: scripts/clang_format_west_command.py
+      commands:
+          - name: format
+            class: FormatCodeWestCommand
+            help: Format the code using clang-format.

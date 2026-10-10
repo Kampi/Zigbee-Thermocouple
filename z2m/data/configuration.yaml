@@ -1,0 +1,21 @@
+# Zigbee2MQTT configuration for the Zigbee-Thermocouple
+# Adjust the MQTT server, the serial port and the frontend port to your installation.
+homeassistant:
+    enabled: true
+frontend:
+    enabled: true
+    port: 8080
+mqtt:
+    base_topic: zigbee2mqtt
+    server: mqtt://localhost:1883
+    keepalive: 60
+    reject_unauthorized: true
+    version: 4
+serial:
+    port: /dev/ttyUSB0
+advanced:
+    log_level: debug
+    # Must be part of CONFIG_ZIGBEE_CHANNEL_MASK in firmware/app/prj.conf (channel 11 or 16)
+    channel: 11
+devices:
+version: 4

@@ -1,0 +1,15 @@
+identifier: zigbee_thermocouple/nrf54l15/cpuapp
+name: Zigbee-Thermocouple-nRF54L15-Application
+type: mcu
+arch: arm
+toolchain:
+    - gnuarmemb
+    - zephyr
+sysbuild: true
+ram: 256
+flash: 1524
+supported:
+    - gpio
+    - i2c
+    - watchdog
+vendor: kampi

@@ -1,0 +1,8 @@
+/*
+ * Copyright (c) 2026 Daniel Kampert
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/* Partition layout for Zigbee (ZBOSS NVRAM and production config) */
+#include <nrf54l15_cpuapp_partitions.dtsi>

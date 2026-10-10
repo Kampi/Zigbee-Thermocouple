@@ -1,0 +1,14 @@
+# Enable MPU
+CONFIG_ARM_MPU=y
+
+# Enable hardware stack protection
+CONFIG_HW_STACK_PROTECTION=y
+
+# Enable GPIO
+CONFIG_GPIO=y
+
+# Must be set to "y" because no external 32 kHz crystal is used here
+CONFIG_CLOCK_CONTROL_NRF_K32SRC_RC=y
+
+# Bluetooth is not used
+CONFIG_BT=n

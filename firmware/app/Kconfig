@@ -1,0 +1,23 @@
+menu "Zigbee-Thermocouple"
+
+config THERMOCOUPLE_MEASUREMENT_INTERVAL_S
+    int "Measurement interval in seconds"
+    range 10 4200
+    default 3600
+    help
+        Interval for the measurement of the thermocouple temperature.
+        The MCP9600 is in shutdown mode between the measurements, so a longer interval
+        saves power. The maximum is limited by the ZBOSS alarm (overflow after approx. 71 minutes).
+
+config THERMOCOUPLE_BATTERY_INTERVAL_S
+    int "Battery measurement interval in seconds"
+    range 60 604800
+    default 86400
+    help
+        Interval for the measurement of the battery voltage. The battery is measured
+        together with the temperature, so the effective interval is a multiple of
+        THERMOCOUPLE_MEASUREMENT_INTERVAL_S. Default is once per day.
+
+endmenu
+
+source "Kconfig.zephyr"

@@ -1,0 +1,11 @@
+# Enable I2C (MCP9600 and nPM1300)
+CONFIG_I2C=y
+
+# Enable the sensing subsystem (MCP9600 and nPM1300 charger)
+CONFIG_SENSOR=y
+
+# Enable the regulator subsystem (nPM1300 BUCK2)
+CONFIG_REGULATOR=y
+
+# Enable the LED subsystem (nPM1300 LED driver)
+CONFIG_LED=y

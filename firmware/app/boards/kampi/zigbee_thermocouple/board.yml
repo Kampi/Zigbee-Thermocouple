@@ -1,0 +1,39 @@
+board:
+    name: zigbee_thermocouple
+    full_name: Zigbee-Thermocouple
+    vendor: kampi
+    revision:
+        format: number
+        default: "1"
+        revisions:
+            - name: "1"
+    socs:
+        - name: nrf54l15
+runners:
+    run_once:
+        '--recover':
+            - runners:
+                  - nrfjprog
+                  - nrfutil
+              run: first
+              groups:
+                  - boards:
+                        - zigbee_thermocouple/nrf54l15/cpuapp
+        '--erase':
+            - runners:
+                  - nrfjprog
+                  - jlink
+                  - nrfutil
+              run: first
+              groups:
+                  - boards:
+                        - zigbee_thermocouple/nrf54l15/cpuapp
+        '--reset':
+            - runners:
+                  - nrfjprog
+                  - jlink
+                  - nrfutil
+              run: last
+              groups:
+                  - boards:
+                        - zigbee_thermocouple/nrf54l15/cpuapp
