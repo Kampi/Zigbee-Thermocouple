@@ -1,0 +1,18 @@
+{
+    "folders": [
+        {
+            "name": "Zigbee-Thermocouple",
+            "path": ".."
+        }
+    ],
+    "extensions": {
+        "recommendations": [
+            "nordic-semiconductor.nrf-connect-extension-pack",
+            "ms-vscode.cpptools",
+            "twxs.cmake",
+            "redhat.vscode-yaml",
+            "davidanson.vscode-markdownlint",
+            "github.vscode-github-actions"
+        ]
+    }
+}

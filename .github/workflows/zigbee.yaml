@@ -1,0 +1,72 @@
+# =============================================================================
+# Workflow: Zigbee-Config
+# =============================================================================
+#
+# Trigger:
+#   - workflow_dispatch: Manual trigger via GitHub UI
+#   - push to branches 'main', 'master', 'dev' or '*_Dev' (excluding *.md changes)
+#   - push of a tag matching semantic versioning (e.g. 1.0.0)
+#
+# Function:
+#   Generates the Zigbee production config (HEX file) from
+#   'firmware/app/zigbee_config.yml' using nrfutil and uploads it as artifact.
+#
+# Variables:
+#   app_dir         - Directory of the firmware application
+#   config_offset   - Flash offset of the production config (address of the
+#                     'zboss_product_config' partition)
+#
+# Secrets:
+#   (none)
+# =============================================================================
+
+name: Zigbee-Config
+
+on:
+    workflow_dispatch:
+    push:
+        tags:
+            - '[0-9]+.[0-9]+.[0-9]+' # Match semantic versioning tags
+        branches:
+            - main
+            - master
+            - dev
+            - '[0-9]*.[0-9]*.[0-9]*_Dev'
+            - '[0-9]*.[0-9]*_Dev'
+        paths-ignore:
+            - '*.md'
+
+env:
+    app_dir: firmware/app
+    config_offset: '0x17c000'
+
+jobs:
+    build:
+        runs-on: ubuntu-24.04
+        container: debian:12
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Dependencies
+              working-directory: ${{ env.app_dir }}
+              run: |
+                  apt-get update && apt-get install -y curl
+                  curl https://files.nordicsemi.com/artifactory/swtools/external/nrfutil/executables/x86_64-unknown-linux-gnu/nrfutil -o nrfutil
+                  mkdir -p zigbee
+                  chmod +x nrfutil
+                  ./nrfutil install nrf5sdk-tools
+
+            - name: Generate
+              working-directory: ${{ env.app_dir }}
+              run: |
+                  ./nrfutil nrf5sdk-tools zigbee production_config zigbee_config.yml zigbee/zigbee_config.hex --offset ${{ env.config_offset }}
+
+            - name: Upload config
+              uses: actions/upload-artifact@v4.3.3
+              with:
+                  name: zigbee-config
+                  path: |
+                      ${{ env.app_dir }}/zigbee
+                  if-no-files-found: ignore

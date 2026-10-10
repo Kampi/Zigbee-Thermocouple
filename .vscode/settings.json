@@ -1,0 +1,11 @@
+{
+    "nrf-connect.applications": [
+        "${workspaceFolder}/firmware/app"
+    ],
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/firmware/**"
+    ],
+    "C_Cpp.default.browse.path": [
+        "${workspaceFolder}/firmware"
+    ]
+}
