@@ -628,7 +628,7 @@
           "group_by": false,
           "label": "Footprint",
           "name": "Footprint",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,
@@ -671,6 +671,12 @@
           "label": "mouser#",
           "name": "mouser#",
           "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Config",
+          "name": "Config",
+          "show": false
         }
       ],
       "filter_string": "",
@@ -729,7 +735,7 @@
         "uuid": "d5742f03-3b1a-42e5-a384-018bd4b919aa"
       }
     ],
-    "used_designators": "D401,R401-403",
+    "used_designators": "L401,D401,R401-403",
     "variants": []
   },
   "sheets": [
@@ -764,15 +770,15 @@
     "COMPANY": "Kampis-Elektroecke",
     "DESIGNER": "Daniel Kampert",
     "FABRICATION_NOTES": "",
-    "GIT_HASH_PCB": "680ce80",
-    "GIT_HASH_SCH": "d473842",
+    "GIT_HASH_PCB": "76482e5",
+    "GIT_HASH_SCH": "90bf5bf",
     "GIT_URL": "https://github.com/Kampi/Zigbee-Thermocouple",
     "PCB_VARIANT": "PRELIMINARY",
     "PROJECT_NAME": "Zigbee-Thermocouple",
     "RELEASE_BODY_2.2.0": "Version 2.2.0 not found.",
     "RELEASE_BODY_UNRELEASED": "Version Unreleased not found.",
-    "RELEASE_DATE": "2026-08-07",
-    "RELEASE_DATE_NUM": "2026-08-07",
+    "RELEASE_DATE": "2026-08-05",
+    "RELEASE_DATE_NUM": "2026-08-05",
     "RELEASE_TITLE_2.2.0": "Version 2.2.0 not found.",
     "RELEASE_TITLE_UNRELEASED": "Version Unreleased not found.",
     "REVISION": "",
@@ -815,7 +821,8 @@
     "SHEET_NAME_6": "Revision History",
     "SHEET_NAME_7": "......................................",
     "SHEET_NAME_8": "......................................",
-    "SHEET_NAME_9": "......................................"
+    "SHEET_NAME_9": "......................................",
+    "VARIANT": "CHECKED"
   },
   "tuning_profiles": {
     "meta": {

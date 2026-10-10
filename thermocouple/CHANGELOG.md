@@ -1,5 +1,9 @@
 # Changelog
 
+**Fixed:**
+
+- Move PMIC-INT to port 0 because port 2 doesn't support interrupts
+
 ## [Unreleased]
 
 ## [1.0.0] - 2026-08-07

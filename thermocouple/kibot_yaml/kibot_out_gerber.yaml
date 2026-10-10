@@ -14,7 +14,7 @@ outputs:
   options:
     subtract_mask_from_silk: true
     plot_footprint_refs: @PLOT_REFS@
-    plot_footprint_values: false
+    plot_footprint_values: true
     create_gerber_job_file: false
 
 ...
