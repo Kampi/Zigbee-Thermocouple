@@ -2,24 +2,30 @@
 <export version="E">
   <design>
     <source>/__w/Zigbee-Thermocouple/Zigbee-Thermocouple/thermocouple/Thermocouple.kicad_sch</source>
-    <date>2026-08-07T18:46:26</date>
-    <tool>Eeschema 10.0.1-10.0.1~ubuntu25.10.1</tool>
+    <date>2026-10-10T18:51:21</date>
+    <tool>Eeschema 10.0.5-unknown-202607221313~667fa36054~ubuntu25.10.1</tool>
     <textvar name="ASSEMBLY_NOTES"/>
     <textvar name="BOARD_NAME">Thermocouple</textvar>
     <textvar name="COMPANY">Kampis-Elektroecke</textvar>
     <textvar name="DESIGNER">Daniel Kampert</textvar>
     <textvar name="FABRICATION_NOTES"/>
-    <textvar name="GIT_HASH_PCB">680ce80</textvar>
+    <textvar name="GIT_HASH_PCB">bccefb2</textvar>
     <textvar name="GIT_HASH_SCH">d473842</textvar>
     <textvar name="GIT_URL">https://github.com/Kampi/Zigbee-Thermocouple</textvar>
     <textvar name="PCB_VARIANT">PRELIMINARY</textvar>
     <textvar name="PROJECT_NAME">Zigbee-Thermocouple</textvar>
+    <textvar name="RELEASE_BODY_1.0.0">**Added:**
+
+- Initial release</textvar>
     <textvar name="RELEASE_BODY_2.2.0">Version 2.2.0 not found.</textvar>
     <textvar name="RELEASE_BODY_UNRELEASED">Version Unreleased not found.</textvar>
-    <textvar name="RELEASE_DATE">2026-08-07</textvar>
-    <textvar name="RELEASE_DATE_NUM">2026-08-07</textvar>
+    <textvar name="RELEASE_BODY_x.y.z">Version x.y.z not found.</textvar>
+    <textvar name="RELEASE_DATE">2026-10-10</textvar>
+    <textvar name="RELEASE_DATE_NUM">2026-10-10</textvar>
+    <textvar name="RELEASE_TITLE_1.0.0">Version 1.0.0 - 2026-08-07</textvar>
     <textvar name="RELEASE_TITLE_2.2.0">Version 2.2.0 not found.</textvar>
     <textvar name="RELEASE_TITLE_UNRELEASED">Version Unreleased not found.</textvar>
+    <textvar name="RELEASE_TITLE_x.y.z">Version x.y.z not found.</textvar>
     <textvar name="REVISION"/>
     <textvar name="SHEET_NAME_1">Cover Page</textvar>
     <textvar name="SHEET_NAME_10">......................................</textvar>
@@ -61,7 +67,7 @@
     <textvar name="SHEET_NAME_7">......................................</textvar>
     <textvar name="SHEET_NAME_8">......................................</textvar>
     <textvar name="SHEET_NAME_9">......................................</textvar>
-    <textvar name="VARIANT">RELEASED</textvar>
+    <textvar name="VARIANT">CHECKED</textvar>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title/>
@@ -174,25 +180,44 @@
   <components>
     <comp ref="C301">
       <value>1u</value>
-      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
-      <datasheet>https://www.mouser.de/datasheet/3/5926/1/AutoMLCCKAF.pdf</datasheet>
-      <description>Unpolarized capacitor, small symbol</description>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <datasheet>https://www.mouser.com/catalog/specsheets/avx_04122018_part%20number%20explanation.pdf</datasheet>
+      <description>1u 25V 20% Y5V</description>
       <fields>
         <field name="manf">KYOCERA AVX</field>
-        <field name="manf#">08053C105K4Z2A</field>
-        <field name="mouser#">581-08053C105K4Z2A</field>
-        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
-        <field name="Datasheet">https://www.mouser.de/datasheet/3/5926/1/AutoMLCCKAF.pdf</field>
-        <field name="Description">Unpolarized capacitor, small symbol</field>
+        <field name="manf#">08053G105MAT2A</field>
+        <field name="mouser#">581-08053G105MAT2A</field>
+        <field name="Part-DB URL">https://inventory.lan/de/part/349/info</field>
+        <field name="Category">Kondensator/MLCC</field>
+        <field name="Manufacturer">KYOCERA AVX</field>
+        <field name="MPN">08053G105MAT2A</field>
+        <field name="Manufacturing Status">Active</field>
+        <field name="Part-DB Footprint">0805</field>
+        <field name="Mass">0.006 g</field>
+        <field name="Part-DB ID">349</field>
+        <field name="Mouser SPN">581-08053G105MAT2A</field>
+        <field name="Stock">0</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet">https://www.mouser.com/catalog/specsheets/avx_04122018_part%20number%20explanation.pdf</field>
+        <field name="Description">1u 25V 20% Y5V</field>
       </fields>
-      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <libsource lib="partdb" part="08053G105MAT2A" description="1u 25V 20% Y5V"/>
       <property name="manf" value="KYOCERA AVX"/>
-      <property name="manf#" value="08053C105K4Z2A"/>
-      <property name="mouser#" value="581-08053C105K4Z2A"/>
+      <property name="manf#" value="08053G105MAT2A"/>
+      <property name="mouser#" value="581-08053G105MAT2A"/>
+      <property name="Part-DB URL" value="https://inventory.lan/de/part/349/info"/>
+      <property name="Category" value="Kondensator/MLCC"/>
+      <property name="Manufacturer" value="KYOCERA AVX"/>
+      <property name="MPN" value="08053G105MAT2A"/>
+      <property name="Manufacturing Status" value="Active"/>
+      <property name="Part-DB Footprint" value="0805"/>
+      <property name="Mass" value="0.006 g"/>
+      <property name="Part-DB ID" value="349"/>
+      <property name="Mouser SPN" value="581-08053G105MAT2A"/>
+      <property name="Stock" value="0"/>
       <property name="Sheetname" value="Power"/>
       <property name="Sheetfile" value="Power.kicad_sch"/>
-      <property name="ki_keywords" value="capacitor cap"/>
-      <property name="ki_fp_filters" value="C_*"/>
+      <property name="ki_fp_filters" value="Capacitor_SMD:C_0805_2012Metric"/>
       <sheetpath names="/Project Architecture/Power/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/b2e38dca-487b-42fb-9842-f335fa269863/"/>
       <tstamps>0f86fcbe-c89a-4b08-baed-2057f2cdec85</tstamps>
       <units>
@@ -206,25 +231,46 @@
     </comp>
     <comp ref="C302">
       <value>100n</value>
-      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
-      <datasheet>https://www.mouser.de/datasheet/3/5926/1/HighTempX8RX8L.pdf</datasheet>
-      <description>Unpolarized capacitor, small symbol</description>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <datasheet>https://inventory.lan/de/part/109/info</datasheet>
+      <description>100n 50V X7R</description>
       <fields>
         <field name="manf">KYOCERA AVX</field>
-        <field name="manf#">08053F104K4T2A</field>
-        <field name="mouser#">581-08053F104K4T2A</field>
-        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
-        <field name="Datasheet">https://www.mouser.de/datasheet/3/5926/1/HighTempX8RX8L.pdf</field>
-        <field name="Description">Unpolarized capacitor, small symbol</field>
+        <field name="manf#">08055C104K4Z4A</field>
+        <field name="mouser#">581-08055C104K4Z4A</field>
+        <field name="Part-DB URL">https://inventory.lan/de/part/109/info</field>
+        <field name="Category">Kondensator/MLCC</field>
+        <field name="Manufacturer">KYOCERA AVX</field>
+        <field name="MPN">08055C104K4Z4A</field>
+        <field name="Manufacturing Status">Active</field>
+        <field name="Part-DB Footprint">0805</field>
+        <field name="Mass">0.006 g</field>
+        <field name="Part-DB ID">109</field>
+        <field name="Mouser SPN">581-08055C104K4Z4A</field>
+        <field name="Stock">6</field>
+        <field name="Storage Location">Sortierregal</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet">https://inventory.lan/de/part/109/info</field>
+        <field name="Description">100n 50V X7R</field>
       </fields>
-      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <libsource lib="partdb" part="08055C104K4Z4A" description="100n 50V X7R"/>
       <property name="manf" value="KYOCERA AVX"/>
-      <property name="manf#" value="08053F104K4T2A"/>
-      <property name="mouser#" value="581-08053F104K4T2A"/>
+      <property name="manf#" value="08055C104K4Z4A"/>
+      <property name="mouser#" value="581-08055C104K4Z4A"/>
+      <property name="Part-DB URL" value="https://inventory.lan/de/part/109/info"/>
+      <property name="Category" value="Kondensator/MLCC"/>
+      <property name="Manufacturer" value="KYOCERA AVX"/>
+      <property name="MPN" value="08055C104K4Z4A"/>
+      <property name="Manufacturing Status" value="Active"/>
+      <property name="Part-DB Footprint" value="0805"/>
+      <property name="Mass" value="0.006 g"/>
+      <property name="Part-DB ID" value="109"/>
+      <property name="Mouser SPN" value="581-08055C104K4Z4A"/>
+      <property name="Stock" value="6"/>
+      <property name="Storage Location" value="Sortierregal"/>
       <property name="Sheetname" value="Power"/>
       <property name="Sheetfile" value="Power.kicad_sch"/>
-      <property name="ki_keywords" value="capacitor cap"/>
-      <property name="ki_fp_filters" value="C_*"/>
+      <property name="ki_fp_filters" value="Capacitor_SMD:C_0805_2012Metric"/>
       <sheetpath names="/Project Architecture/Power/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/b2e38dca-487b-42fb-9842-f335fa269863/"/>
       <tstamps>e262cf8a-52fa-4671-926b-aa4f0fc5e293</tstamps>
       <units>
@@ -238,25 +284,42 @@
     </comp>
     <comp ref="C303">
       <value>2u2</value>
-      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
-      <datasheet>https://datasheets.kyocera-avx.com/KGQ-Series.pdf</datasheet>
-      <description>Unpolarized capacitor, small symbol</description>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <datasheet>https://www.mouser.com/catalog/specsheets/Taiyo%20Yuden_1102023_MC_mlcc_all_e.pdf</datasheet>
+      <description>2u2 25V 20% X7R</description>
       <fields>
-        <field name="manf">KYOCERA AVX</field>
-        <field name="manf#">08052U220JAT2A</field>
-        <field name="mouser#">581-08052U220JAT2A</field>
-        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
-        <field name="Datasheet">https://datasheets.kyocera-avx.com/KGQ-Series.pdf</field>
-        <field name="Description">Unpolarized capacitor, small symbol</field>
+        <field name="manf">TAIYO YUDEN</field>
+        <field name="manf#">MCJCT21GCB7225MTPA1J</field>
+        <field name="mouser#">963-T21GCB7225MTPA1J</field>
+        <field name="Part-DB URL">https://inventory.lan/de/part/328/info</field>
+        <field name="Category">Kondensator/MLCC</field>
+        <field name="Manufacturer">TAIYO YUDEN</field>
+        <field name="MPN">MCJCT21GCB7225MTPA1J</field>
+        <field name="Manufacturing Status">Active</field>
+        <field name="Part-DB Footprint">0805</field>
+        <field name="Part-DB ID">328</field>
+        <field name="Mouser SPN">963-T21GCB7225MTPA1J</field>
+        <field name="Stock">0</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet">https://www.mouser.com/catalog/specsheets/Taiyo%20Yuden_1102023_MC_mlcc_all_e.pdf</field>
+        <field name="Description">2u2 25V 20% X7R</field>
       </fields>
-      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
-      <property name="manf" value="KYOCERA AVX"/>
-      <property name="manf#" value="08052U220JAT2A"/>
-      <property name="mouser#" value="581-08052U220JAT2A"/>
+      <libsource lib="partdb" part="MCJCT21GCB7225MTPA1J" description="2u2 25V 20% X7R"/>
+      <property name="manf" value="TAIYO YUDEN"/>
+      <property name="manf#" value="MCJCT21GCB7225MTPA1J"/>
+      <property name="mouser#" value="963-T21GCB7225MTPA1J"/>
+      <property name="Part-DB URL" value="https://inventory.lan/de/part/328/info"/>
+      <property name="Category" value="Kondensator/MLCC"/>
+      <property name="Manufacturer" value="TAIYO YUDEN"/>
+      <property name="MPN" value="MCJCT21GCB7225MTPA1J"/>
+      <property name="Manufacturing Status" value="Active"/>
+      <property name="Part-DB Footprint" value="0805"/>
+      <property name="Part-DB ID" value="328"/>
+      <property name="Mouser SPN" value="963-T21GCB7225MTPA1J"/>
+      <property name="Stock" value="0"/>
       <property name="Sheetname" value="Power"/>
       <property name="Sheetfile" value="Power.kicad_sch"/>
-      <property name="ki_keywords" value="capacitor cap"/>
-      <property name="ki_fp_filters" value="C_*"/>
+      <property name="ki_fp_filters" value="Capacitor_SMD:C_0805_2012Metric"/>
       <sheetpath names="/Project Architecture/Power/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/b2e38dca-487b-42fb-9842-f335fa269863/"/>
       <tstamps>93546abb-c4af-464d-9ec2-5521f5e20bca</tstamps>
       <units>
@@ -270,25 +333,42 @@
     </comp>
     <comp ref="C304">
       <value>10u</value>
-      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
-      <datasheet>https://ele.kyocera.com/assets/products/capacitor/KGM_Series_e.pdf</datasheet>
-      <description>Unpolarized capacitor, small symbol</description>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <datasheet>https://inventory.lan/de/part/331/info</datasheet>
+      <description>10u 25V 10% X7R</description>
       <fields>
         <field name="manf">KYOCERA AVX</field>
-        <field name="manf#">KGM21AR71C106MU</field>
-        <field name="mouser#">581-KGM21AR71C106MU</field>
-        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
-        <field name="Datasheet">https://ele.kyocera.com/assets/products/capacitor/KGM_Series_e.pdf</field>
-        <field name="Description">Unpolarized capacitor, small symbol</field>
+        <field name="manf#">0805X7R106KT1AT</field>
+        <field name="mouser#">581-0805X7R106KT1AT</field>
+        <field name="Part-DB URL">https://inventory.lan/de/part/331/info</field>
+        <field name="Category">Kondensator/MLCC</field>
+        <field name="Manufacturer">KYOCERA AVX</field>
+        <field name="MPN">0805X7R106KT1AT</field>
+        <field name="Manufacturing Status">Active</field>
+        <field name="Part-DB Footprint">0805</field>
+        <field name="Part-DB ID">331</field>
+        <field name="Mouser SPN">581-0805X7R106KT1AT</field>
+        <field name="Stock">0</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet">https://inventory.lan/de/part/331/info</field>
+        <field name="Description">10u 25V 10% X7R</field>
       </fields>
-      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <libsource lib="partdb" part="0805X7R106KT1AT" description="10u 25V 10% X7R"/>
       <property name="manf" value="KYOCERA AVX"/>
-      <property name="manf#" value="KGM21AR71C106MU"/>
-      <property name="mouser#" value="581-KGM21AR71C106MU"/>
+      <property name="manf#" value="0805X7R106KT1AT"/>
+      <property name="mouser#" value="581-0805X7R106KT1AT"/>
+      <property name="Part-DB URL" value="https://inventory.lan/de/part/331/info"/>
+      <property name="Category" value="Kondensator/MLCC"/>
+      <property name="Manufacturer" value="KYOCERA AVX"/>
+      <property name="MPN" value="0805X7R106KT1AT"/>
+      <property name="Manufacturing Status" value="Active"/>
+      <property name="Part-DB Footprint" value="0805"/>
+      <property name="Part-DB ID" value="331"/>
+      <property name="Mouser SPN" value="581-0805X7R106KT1AT"/>
+      <property name="Stock" value="0"/>
       <property name="Sheetname" value="Power"/>
       <property name="Sheetfile" value="Power.kicad_sch"/>
-      <property name="ki_keywords" value="capacitor cap"/>
-      <property name="ki_fp_filters" value="C_*"/>
+      <property name="ki_fp_filters" value="Capacitor_SMD:C_0805_2012Metric"/>
       <sheetpath names="/Project Architecture/Power/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/b2e38dca-487b-42fb-9842-f335fa269863/"/>
       <tstamps>87837e07-75c0-477c-8f09-a572e9459c52</tstamps>
       <units>
@@ -302,25 +382,42 @@
     </comp>
     <comp ref="C305">
       <value>10u</value>
-      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
-      <datasheet>https://ele.kyocera.com/assets/products/capacitor/KGM_Series_e.pdf</datasheet>
-      <description>Unpolarized capacitor, small symbol</description>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <datasheet>https://inventory.lan/de/part/331/info</datasheet>
+      <description>10u 25V 10% X7R</description>
       <fields>
         <field name="manf">KYOCERA AVX</field>
-        <field name="manf#">KGM21AR71C106MU</field>
-        <field name="mouser#">581-KGM21AR71C106MU</field>
-        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
-        <field name="Datasheet">https://ele.kyocera.com/assets/products/capacitor/KGM_Series_e.pdf</field>
-        <field name="Description">Unpolarized capacitor, small symbol</field>
+        <field name="manf#">0805X7R106KT1AT</field>
+        <field name="mouser#">581-0805X7R106KT1AT</field>
+        <field name="Part-DB URL">https://inventory.lan/de/part/331/info</field>
+        <field name="Category">Kondensator/MLCC</field>
+        <field name="Manufacturer">KYOCERA AVX</field>
+        <field name="MPN">0805X7R106KT1AT</field>
+        <field name="Manufacturing Status">Active</field>
+        <field name="Part-DB Footprint">0805</field>
+        <field name="Part-DB ID">331</field>
+        <field name="Mouser SPN">581-0805X7R106KT1AT</field>
+        <field name="Stock">0</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet">https://inventory.lan/de/part/331/info</field>
+        <field name="Description">10u 25V 10% X7R</field>
       </fields>
-      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <libsource lib="partdb" part="0805X7R106KT1AT" description="10u 25V 10% X7R"/>
       <property name="manf" value="KYOCERA AVX"/>
-      <property name="manf#" value="KGM21AR71C106MU"/>
-      <property name="mouser#" value="581-KGM21AR71C106MU"/>
+      <property name="manf#" value="0805X7R106KT1AT"/>
+      <property name="mouser#" value="581-0805X7R106KT1AT"/>
+      <property name="Part-DB URL" value="https://inventory.lan/de/part/331/info"/>
+      <property name="Category" value="Kondensator/MLCC"/>
+      <property name="Manufacturer" value="KYOCERA AVX"/>
+      <property name="MPN" value="0805X7R106KT1AT"/>
+      <property name="Manufacturing Status" value="Active"/>
+      <property name="Part-DB Footprint" value="0805"/>
+      <property name="Part-DB ID" value="331"/>
+      <property name="Mouser SPN" value="581-0805X7R106KT1AT"/>
+      <property name="Stock" value="0"/>
       <property name="Sheetname" value="Power"/>
       <property name="Sheetfile" value="Power.kicad_sch"/>
-      <property name="ki_keywords" value="capacitor cap"/>
-      <property name="ki_fp_filters" value="C_*"/>
+      <property name="ki_fp_filters" value="Capacitor_SMD:C_0805_2012Metric"/>
       <sheetpath names="/Project Architecture/Power/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/b2e38dca-487b-42fb-9842-f335fa269863/"/>
       <tstamps>26acfb06-5cc5-4b56-bd13-6fada4843d06</tstamps>
       <units>
@@ -334,25 +431,42 @@
     </comp>
     <comp ref="C306">
       <value>10u</value>
-      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
-      <datasheet>https://ele.kyocera.com/assets/products/capacitor/KGM_Series_e.pdf</datasheet>
-      <description>Unpolarized capacitor, small symbol</description>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <datasheet>https://inventory.lan/de/part/331/info</datasheet>
+      <description>10u 25V 10% X7R</description>
       <fields>
         <field name="manf">KYOCERA AVX</field>
-        <field name="manf#">KGM21AR71C106MU</field>
-        <field name="mouser#">581-KGM21AR71C106MU</field>
-        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
-        <field name="Datasheet">https://ele.kyocera.com/assets/products/capacitor/KGM_Series_e.pdf</field>
-        <field name="Description">Unpolarized capacitor, small symbol</field>
+        <field name="manf#">0805X7R106KT1AT</field>
+        <field name="mouser#">581-0805X7R106KT1AT</field>
+        <field name="Part-DB URL">https://inventory.lan/de/part/331/info</field>
+        <field name="Category">Kondensator/MLCC</field>
+        <field name="Manufacturer">KYOCERA AVX</field>
+        <field name="MPN">0805X7R106KT1AT</field>
+        <field name="Manufacturing Status">Active</field>
+        <field name="Part-DB Footprint">0805</field>
+        <field name="Part-DB ID">331</field>
+        <field name="Mouser SPN">581-0805X7R106KT1AT</field>
+        <field name="Stock">0</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet">https://inventory.lan/de/part/331/info</field>
+        <field name="Description">10u 25V 10% X7R</field>
       </fields>
-      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <libsource lib="partdb" part="0805X7R106KT1AT" description="10u 25V 10% X7R"/>
       <property name="manf" value="KYOCERA AVX"/>
-      <property name="manf#" value="KGM21AR71C106MU"/>
-      <property name="mouser#" value="581-KGM21AR71C106MU"/>
+      <property name="manf#" value="0805X7R106KT1AT"/>
+      <property name="mouser#" value="581-0805X7R106KT1AT"/>
+      <property name="Part-DB URL" value="https://inventory.lan/de/part/331/info"/>
+      <property name="Category" value="Kondensator/MLCC"/>
+      <property name="Manufacturer" value="KYOCERA AVX"/>
+      <property name="MPN" value="0805X7R106KT1AT"/>
+      <property name="Manufacturing Status" value="Active"/>
+      <property name="Part-DB Footprint" value="0805"/>
+      <property name="Part-DB ID" value="331"/>
+      <property name="Mouser SPN" value="581-0805X7R106KT1AT"/>
+      <property name="Stock" value="0"/>
       <property name="Sheetname" value="Power"/>
       <property name="Sheetfile" value="Power.kicad_sch"/>
-      <property name="ki_keywords" value="capacitor cap"/>
-      <property name="ki_fp_filters" value="C_*"/>
+      <property name="ki_fp_filters" value="Capacitor_SMD:C_0805_2012Metric"/>
       <sheetpath names="/Project Architecture/Power/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/b2e38dca-487b-42fb-9842-f335fa269863/"/>
       <tstamps>4e8391d9-dcc1-4cf1-b9be-affad3ad3a4d</tstamps>
       <units>
@@ -366,25 +480,42 @@
     </comp>
     <comp ref="C307">
       <value>10u</value>
-      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
-      <datasheet>https://ele.kyocera.com/assets/products/capacitor/KGM_Series_e.pdf</datasheet>
-      <description>Unpolarized capacitor, small symbol</description>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <datasheet>https://inventory.lan/de/part/331/info</datasheet>
+      <description>10u 25V 10% X7R</description>
       <fields>
         <field name="manf">KYOCERA AVX</field>
-        <field name="manf#">KGM21AR71C106MU</field>
-        <field name="mouser#">581-KGM21AR71C106MU</field>
-        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
-        <field name="Datasheet">https://ele.kyocera.com/assets/products/capacitor/KGM_Series_e.pdf</field>
-        <field name="Description">Unpolarized capacitor, small symbol</field>
+        <field name="manf#">0805X7R106KT1AT</field>
+        <field name="mouser#">581-0805X7R106KT1AT</field>
+        <field name="Part-DB URL">https://inventory.lan/de/part/331/info</field>
+        <field name="Category">Kondensator/MLCC</field>
+        <field name="Manufacturer">KYOCERA AVX</field>
+        <field name="MPN">0805X7R106KT1AT</field>
+        <field name="Manufacturing Status">Active</field>
+        <field name="Part-DB Footprint">0805</field>
+        <field name="Part-DB ID">331</field>
+        <field name="Mouser SPN">581-0805X7R106KT1AT</field>
+        <field name="Stock">0</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet">https://inventory.lan/de/part/331/info</field>
+        <field name="Description">10u 25V 10% X7R</field>
       </fields>
-      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <libsource lib="partdb" part="0805X7R106KT1AT" description="10u 25V 10% X7R"/>
       <property name="manf" value="KYOCERA AVX"/>
-      <property name="manf#" value="KGM21AR71C106MU"/>
-      <property name="mouser#" value="581-KGM21AR71C106MU"/>
+      <property name="manf#" value="0805X7R106KT1AT"/>
+      <property name="mouser#" value="581-0805X7R106KT1AT"/>
+      <property name="Part-DB URL" value="https://inventory.lan/de/part/331/info"/>
+      <property name="Category" value="Kondensator/MLCC"/>
+      <property name="Manufacturer" value="KYOCERA AVX"/>
+      <property name="MPN" value="0805X7R106KT1AT"/>
+      <property name="Manufacturing Status" value="Active"/>
+      <property name="Part-DB Footprint" value="0805"/>
+      <property name="Part-DB ID" value="331"/>
+      <property name="Mouser SPN" value="581-0805X7R106KT1AT"/>
+      <property name="Stock" value="0"/>
       <property name="Sheetname" value="Power"/>
       <property name="Sheetfile" value="Power.kicad_sch"/>
-      <property name="ki_keywords" value="capacitor cap"/>
-      <property name="ki_fp_filters" value="C_*"/>
+      <property name="ki_fp_filters" value="Capacitor_SMD:C_0805_2012Metric"/>
       <sheetpath names="/Project Architecture/Power/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/b2e38dca-487b-42fb-9842-f335fa269863/"/>
       <tstamps>e4648c30-036c-40cd-a72a-b1f637c1d4bf</tstamps>
       <units>
@@ -492,21 +623,21 @@
     </comp>
     <comp ref="L301">
       <value>2u2</value>
-      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
-      <datasheet>https://datasheets.kyocera-avx.com/KGQ-Series.pdf</datasheet>
+      <footprint>Inductor_SMD_Kampi:L_0806_2016</footprint>
+      <datasheet>https://www.mouser.de/datasheet/3/184/1/ASMPH-0806.pdf</datasheet>
       <description>Inductor</description>
       <fields>
-        <field name="manf">KYOCERA AVX</field>
-        <field name="manf#">08052U220JAT2A</field>
-        <field name="mouser#">581-08052U220JAT2A</field>
-        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
-        <field name="Datasheet">https://datasheets.kyocera-avx.com/KGQ-Series.pdf</field>
+        <field name="manf">ABRACON</field>
+        <field name="manf#">ASMPH-0806-2R2M-T</field>
+        <field name="mouser#">815-ASMPH-0806-2R2M-T</field>
+        <field name="Footprint">Inductor_SMD_Kampi:L_0806_2016</field>
+        <field name="Datasheet">https://www.mouser.de/datasheet/3/184/1/ASMPH-0806.pdf</field>
         <field name="Description">Inductor</field>
       </fields>
       <libsource lib="Device" part="L" description="Inductor"/>
-      <property name="manf" value="KYOCERA AVX"/>
-      <property name="manf#" value="08052U220JAT2A"/>
-      <property name="mouser#" value="581-08052U220JAT2A"/>
+      <property name="manf" value="ABRACON"/>
+      <property name="manf#" value="ASMPH-0806-2R2M-T"/>
+      <property name="mouser#" value="815-ASMPH-0806-2R2M-T"/>
       <property name="Sheetname" value="Power"/>
       <property name="Sheetfile" value="Power.kicad_sch"/>
       <property name="ki_keywords" value="inductor choke coil reactor magnetic"/>
@@ -588,22 +719,22 @@
       </units>
     </comp>
     <comp ref="R401">
-      <value>590R</value>
+      <value>4k7</value>
       <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
       <datasheet>https://www.mouser.de/datasheet/3/40/1/cr.pdf</datasheet>
       <description>Resistor</description>
       <fields>
         <field name="manf">Bourns</field>
-        <field name="manf#">CR0805-FX-5900ELF</field>
-        <field name="mouser#">652-CR0805-FX-5900ELF</field>
+        <field name="manf#">CR0805-JW-472ELF</field>
+        <field name="mouser#">652-CR0805JW-472ELF</field>
         <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
         <field name="Datasheet">https://www.mouser.de/datasheet/3/40/1/cr.pdf</field>
         <field name="Description">Resistor</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="manf" value="Bourns"/>
-      <property name="manf#" value="CR0805-FX-5900ELF"/>
-      <property name="mouser#" value="652-CR0805-FX-5900ELF"/>
+      <property name="manf#" value="CR0805-JW-472ELF"/>
+      <property name="mouser#" value="652-CR0805JW-472ELF"/>
       <property name="Sheetname" value="Power"/>
       <property name="Sheetfile" value="Power.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -620,22 +751,22 @@
       </units>
     </comp>
     <comp ref="R402">
-      <value>430R</value>
+      <value>10k</value>
       <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
       <datasheet>https://www.mouser.de/datasheet/3/40/1/cr.pdf</datasheet>
       <description>Resistor</description>
       <fields>
         <field name="manf">Bourns</field>
-        <field name="manf#">CR0805-FX-4300ELF</field>
-        <field name="mouser#">652-CR0805-FX-4300ELF</field>
+        <field name="manf#">CR0805-FX-1002ELF</field>
+        <field name="mouser#">652-CR0805FX-1002ELF</field>
         <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
         <field name="Datasheet">https://www.mouser.de/datasheet/3/40/1/cr.pdf</field>
         <field name="Description">Resistor</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="manf" value="Bourns"/>
-      <property name="manf#" value="CR0805-FX-4300ELF"/>
-      <property name="mouser#" value="652-CR0805-FX-4300ELF"/>
+      <property name="manf#" value="CR0805-FX-1002ELF"/>
+      <property name="mouser#" value="652-CR0805FX-1002ELF"/>
       <property name="Sheetname" value="Power"/>
       <property name="Sheetfile" value="Power.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -652,22 +783,22 @@
       </units>
     </comp>
     <comp ref="R403">
-      <value>430R</value>
+      <value>3k3</value>
       <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
       <datasheet>https://www.mouser.de/datasheet/3/40/1/cr.pdf</datasheet>
       <description>Resistor</description>
       <fields>
         <field name="manf">Bourns</field>
-        <field name="manf#">CR0805-FX-4300ELF</field>
-        <field name="mouser#">652-CR0805-FX-4300ELF</field>
+        <field name="manf#">CR0805-JW-332ELF</field>
+        <field name="mouser#">652-CR0805-JW-332ELF</field>
         <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
         <field name="Datasheet">https://www.mouser.de/datasheet/3/40/1/cr.pdf</field>
         <field name="Description">Resistor</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="manf" value="Bourns"/>
-      <property name="manf#" value="CR0805-FX-4300ELF"/>
-      <property name="mouser#" value="652-CR0805-FX-4300ELF"/>
+      <property name="manf#" value="CR0805-JW-332ELF"/>
+      <property name="mouser#" value="652-CR0805-JW-332ELF"/>
       <property name="Sheetname" value="Power"/>
       <property name="Sheetfile" value="Power.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -794,14 +925,20 @@
     </comp>
     <comp ref="X302">
       <value>Battery</value>
-      <footprint>Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal</footprint>
+      <footprint>Connector_JST:JST_PH_B2B-PH-SM4-TB_1x02-1MP_P2.00mm_Vertical</footprint>
       <description>Generic connectable mounting pin connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
       <fields>
-        <field name="Footprint">Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal</field>
+        <field name="manf">JST</field>
+        <field name="manf#">S2B-PH-Sm4-TB</field>
+        <field name="mouser#"/>
+        <field name="Footprint">Connector_JST:JST_PH_B2B-PH-SM4-TB_1x02-1MP_P2.00mm_Vertical</field>
         <field name="Datasheet"/>
         <field name="Description">Generic connectable mounting pin connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</field>
       </fields>
       <libsource lib="Connector_Generic_MountingPin" part="Conn_01x02_MountingPin" description="Generic connectable mounting pin connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="manf" value="JST"/>
+      <property name="manf#" value="S2B-PH-Sm4-TB"/>
+      <property name="mouser#" value=""/>
       <property name="Sheetname" value="Power"/>
       <property name="Sheetfile" value="Power.kicad_sch"/>
       <property name="ki_keywords" value="connector"/>
@@ -820,24 +957,46 @@
     </comp>
     <comp ref="C701">
       <value>100n</value>
-      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
-      <datasheet>https://www.mouser.de/datasheet/3/5926/1/HighTempX8RX8L.pdf</datasheet>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <datasheet>https://inventory.lan/de/part/109/info</datasheet>
+      <description>100n 50V X7R</description>
       <fields>
         <field name="manf">KYOCERA AVX</field>
-        <field name="manf#">08053F104K4T2A</field>
-        <field name="mouser#">581-08053F104K4T2A</field>
-        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
-        <field name="Datasheet">https://www.mouser.de/datasheet/3/5926/1/HighTempX8RX8L.pdf</field>
-        <field name="Description"/>
+        <field name="manf#">08055C104K4Z4A</field>
+        <field name="mouser#">581-08055C104K4Z4A</field>
+        <field name="Part-DB URL">https://inventory.lan/de/part/109/info</field>
+        <field name="Category">Kondensator/MLCC</field>
+        <field name="Manufacturer">KYOCERA AVX</field>
+        <field name="MPN">08055C104K4Z4A</field>
+        <field name="Manufacturing Status">Active</field>
+        <field name="Part-DB Footprint">0805</field>
+        <field name="Mass">0.006 g</field>
+        <field name="Part-DB ID">109</field>
+        <field name="Mouser SPN">581-08055C104K4Z4A</field>
+        <field name="Stock">6</field>
+        <field name="Storage Location">Sortierregal</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet">https://inventory.lan/de/part/109/info</field>
+        <field name="Description">100n 50V X7R</field>
       </fields>
-      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <libsource lib="partdb" part="08055C104K4Z4A" description="100n 50V X7R"/>
       <property name="manf" value="KYOCERA AVX"/>
-      <property name="manf#" value="08053F104K4T2A"/>
-      <property name="mouser#" value="581-08053F104K4T2A"/>
+      <property name="manf#" value="08055C104K4Z4A"/>
+      <property name="mouser#" value="581-08055C104K4Z4A"/>
+      <property name="Part-DB URL" value="https://inventory.lan/de/part/109/info"/>
+      <property name="Category" value="Kondensator/MLCC"/>
+      <property name="Manufacturer" value="KYOCERA AVX"/>
+      <property name="MPN" value="08055C104K4Z4A"/>
+      <property name="Manufacturing Status" value="Active"/>
+      <property name="Part-DB Footprint" value="0805"/>
+      <property name="Mass" value="0.006 g"/>
+      <property name="Part-DB ID" value="109"/>
+      <property name="Mouser SPN" value="581-08055C104K4Z4A"/>
+      <property name="Stock" value="6"/>
+      <property name="Storage Location" value="Sortierregal"/>
       <property name="Sheetname" value="Main"/>
       <property name="Sheetfile" value="Main.kicad_sch"/>
-      <property name="ki_keywords" value="capacitor cap"/>
-      <property name="ki_fp_filters" value="C_*"/>
+      <property name="ki_fp_filters" value="Capacitor_SMD:C_0805_2012Metric"/>
       <sheetpath names="/Project Architecture/Main/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/f06537ee-772d-44d3-8c50-e0ba41038c9c/"/>
       <tstamps>7c1ed346-c167-425d-9c7f-fb235804163d</tstamps>
       <units>
@@ -851,24 +1010,46 @@
     </comp>
     <comp ref="C703">
       <value>100n</value>
-      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
-      <datasheet>https://www.mouser.de/datasheet/3/5926/1/HighTempX8RX8L.pdf</datasheet>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <datasheet>https://inventory.lan/de/part/109/info</datasheet>
+      <description>100n 50V X7R</description>
       <fields>
         <field name="manf">KYOCERA AVX</field>
-        <field name="manf#">08053F104K4T2A</field>
-        <field name="mouser#">581-08053F104K4T2A</field>
-        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
-        <field name="Datasheet">https://www.mouser.de/datasheet/3/5926/1/HighTempX8RX8L.pdf</field>
-        <field name="Description"/>
+        <field name="manf#">08055C104K4Z4A</field>
+        <field name="mouser#">581-08055C104K4Z4A</field>
+        <field name="Part-DB URL">https://inventory.lan/de/part/109/info</field>
+        <field name="Category">Kondensator/MLCC</field>
+        <field name="Manufacturer">KYOCERA AVX</field>
+        <field name="MPN">08055C104K4Z4A</field>
+        <field name="Manufacturing Status">Active</field>
+        <field name="Part-DB Footprint">0805</field>
+        <field name="Mass">0.006 g</field>
+        <field name="Part-DB ID">109</field>
+        <field name="Mouser SPN">581-08055C104K4Z4A</field>
+        <field name="Stock">6</field>
+        <field name="Storage Location">Sortierregal</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet">https://inventory.lan/de/part/109/info</field>
+        <field name="Description">100n 50V X7R</field>
       </fields>
-      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <libsource lib="partdb" part="08055C104K4Z4A" description="100n 50V X7R"/>
       <property name="manf" value="KYOCERA AVX"/>
-      <property name="manf#" value="08053F104K4T2A"/>
-      <property name="mouser#" value="581-08053F104K4T2A"/>
+      <property name="manf#" value="08055C104K4Z4A"/>
+      <property name="mouser#" value="581-08055C104K4Z4A"/>
+      <property name="Part-DB URL" value="https://inventory.lan/de/part/109/info"/>
+      <property name="Category" value="Kondensator/MLCC"/>
+      <property name="Manufacturer" value="KYOCERA AVX"/>
+      <property name="MPN" value="08055C104K4Z4A"/>
+      <property name="Manufacturing Status" value="Active"/>
+      <property name="Part-DB Footprint" value="0805"/>
+      <property name="Mass" value="0.006 g"/>
+      <property name="Part-DB ID" value="109"/>
+      <property name="Mouser SPN" value="581-08055C104K4Z4A"/>
+      <property name="Stock" value="6"/>
+      <property name="Storage Location" value="Sortierregal"/>
       <property name="Sheetname" value="Main"/>
       <property name="Sheetfile" value="Main.kicad_sch"/>
-      <property name="ki_keywords" value="capacitor cap"/>
-      <property name="ki_fp_filters" value="C_*"/>
+      <property name="ki_fp_filters" value="Capacitor_SMD:C_0805_2012Metric"/>
       <sheetpath names="/Project Architecture/Main/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/f06537ee-772d-44d3-8c50-e0ba41038c9c/"/>
       <tstamps>9c0cc967-2f92-4aa3-b37b-b632f35eb8d1</tstamps>
       <units>
@@ -882,24 +1063,46 @@
     </comp>
     <comp ref="C704">
       <value>100n</value>
-      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
-      <datasheet>https://www.mouser.de/datasheet/3/5926/1/HighTempX8RX8L.pdf</datasheet>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <datasheet>https://inventory.lan/de/part/109/info</datasheet>
+      <description>100n 50V X7R</description>
       <fields>
         <field name="manf">KYOCERA AVX</field>
-        <field name="manf#">08053F104K4T2A</field>
-        <field name="mouser#">581-08053F104K4T2A</field>
-        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
-        <field name="Datasheet">https://www.mouser.de/datasheet/3/5926/1/HighTempX8RX8L.pdf</field>
-        <field name="Description"/>
+        <field name="manf#">08055C104K4Z4A</field>
+        <field name="mouser#">581-08055C104K4Z4A</field>
+        <field name="Part-DB URL">https://inventory.lan/de/part/109/info</field>
+        <field name="Category">Kondensator/MLCC</field>
+        <field name="Manufacturer">KYOCERA AVX</field>
+        <field name="MPN">08055C104K4Z4A</field>
+        <field name="Manufacturing Status">Active</field>
+        <field name="Part-DB Footprint">0805</field>
+        <field name="Mass">0.006 g</field>
+        <field name="Part-DB ID">109</field>
+        <field name="Mouser SPN">581-08055C104K4Z4A</field>
+        <field name="Stock">6</field>
+        <field name="Storage Location">Sortierregal</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet">https://inventory.lan/de/part/109/info</field>
+        <field name="Description">100n 50V X7R</field>
       </fields>
-      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <libsource lib="partdb" part="08055C104K4Z4A" description="100n 50V X7R"/>
       <property name="manf" value="KYOCERA AVX"/>
-      <property name="manf#" value="08053F104K4T2A"/>
-      <property name="mouser#" value="581-08053F104K4T2A"/>
+      <property name="manf#" value="08055C104K4Z4A"/>
+      <property name="mouser#" value="581-08055C104K4Z4A"/>
+      <property name="Part-DB URL" value="https://inventory.lan/de/part/109/info"/>
+      <property name="Category" value="Kondensator/MLCC"/>
+      <property name="Manufacturer" value="KYOCERA AVX"/>
+      <property name="MPN" value="08055C104K4Z4A"/>
+      <property name="Manufacturing Status" value="Active"/>
+      <property name="Part-DB Footprint" value="0805"/>
+      <property name="Mass" value="0.006 g"/>
+      <property name="Part-DB ID" value="109"/>
+      <property name="Mouser SPN" value="581-08055C104K4Z4A"/>
+      <property name="Stock" value="6"/>
+      <property name="Storage Location" value="Sortierregal"/>
       <property name="Sheetname" value="Main"/>
       <property name="Sheetfile" value="Main.kicad_sch"/>
-      <property name="ki_keywords" value="capacitor cap"/>
-      <property name="ki_fp_filters" value="C_*"/>
+      <property name="ki_fp_filters" value="Capacitor_SMD:C_0805_2012Metric"/>
       <sheetpath names="/Project Architecture/Main/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/f06537ee-772d-44d3-8c50-e0ba41038c9c/"/>
       <tstamps>127bc4e2-cfc1-4ddb-be1c-5b4619673383</tstamps>
       <units>
@@ -1011,6 +1214,15 @@
             <pin num="12"/>
             <pin num="14"/>
             <pin num="15"/>
+            <pin num="3"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="9"/>
+            <pin num="10"/>
+            <pin num="13"/>
+            <pin num="17"/>
+            <pin num="18"/>
           </pins>
         </unit>
       </units>
@@ -1018,23 +1230,43 @@
     <comp ref="M701">
       <value>BM15C</value>
       <footprint>Fanstel:BM15C</footprint>
-      <datasheet>https://static1.squarespace.com/static/561459a2e4b0b39f5cefa12e/t/66c3d7591cc204465c3f6e4f/1724110684125/BM15C+Product+Specifications.pdf</datasheet>
-      <description>nRF54L module with chip antenna</description>
+      <datasheet>https://www.mouser.com/datasheet/2/915/BM15C_2bProduct_2bSpecifications-3555318.pdf</datasheet>
+      <description>Bluetooth-Module – 802.15.1 nRF54L15 BLE 6.0 module with a chip antenna</description>
       <fields>
         <field name="manf">Fanstel</field>
         <field name="manf#">BM15C</field>
         <field name="mouser#">308-BM15C</field>
+        <field name="Part-DB URL">https://inventory.lan/de/part/52/info</field>
+        <field name="Category">Modul/Fanstel</field>
+        <field name="Manufacturer">Fanstel</field>
+        <field name="MPN">BM15C</field>
+        <field name="Manufacturing Status">Active</field>
+        <field name="Part-DB Footprint">BM15C</field>
+        <field name="Part-DB ID">52</field>
+        <field name="Mouser SPN">308-BM15C</field>
+        <field name="Stock">2</field>
+        <field name="Storage Location">Sortierregal</field>
         <field name="Footprint">Fanstel:BM15C</field>
-        <field name="Datasheet">https://static1.squarespace.com/static/561459a2e4b0b39f5cefa12e/t/66c3d7591cc204465c3f6e4f/1724110684125/BM15C+Product+Specifications.pdf</field>
-        <field name="Description">nRF54L module with chip antenna</field>
+        <field name="Datasheet">https://www.mouser.com/datasheet/2/915/BM15C_2bProduct_2bSpecifications-3555318.pdf</field>
+        <field name="Description">Bluetooth-Module – 802.15.1 nRF54L15 BLE 6.0 module with a chip antenna</field>
       </fields>
-      <libsource lib="Fanstel" part="BM15C" description="nRF54L module with chip antenna"/>
+      <libsource lib="partdb" part="BM15C" description="Bluetooth-Module – 802.15.1 nRF54L15 BLE 6.0 module with a chip antenna"/>
       <property name="manf" value="Fanstel"/>
       <property name="manf#" value="BM15C"/>
       <property name="mouser#" value="308-BM15C"/>
+      <property name="Part-DB URL" value="https://inventory.lan/de/part/52/info"/>
+      <property name="Category" value="Modul/Fanstel"/>
+      <property name="Manufacturer" value="Fanstel"/>
+      <property name="MPN" value="BM15C"/>
+      <property name="Manufacturing Status" value="Active"/>
+      <property name="Part-DB Footprint" value="BM15C"/>
+      <property name="Part-DB ID" value="52"/>
+      <property name="Mouser SPN" value="308-BM15C"/>
+      <property name="Stock" value="2"/>
+      <property name="Storage Location" value="Sortierregal"/>
       <property name="Sheetname" value="Main"/>
       <property name="Sheetfile" value="Main.kicad_sch"/>
-      <property name="ki_keywords" value="nRF54L"/>
+      <property name="ki_fp_filters" value="Fanstel:BM15C"/>
       <sheetpath names="/Project Architecture/Main/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/f06537ee-772d-44d3-8c50-e0ba41038c9c/"/>
       <tstamps>1fbe8a5d-fe2a-4a74-a66d-58359b9d9b0d</tstamps>
       <units>
@@ -1092,24 +1324,45 @@
     <comp ref="R701">
       <value>100k</value>
       <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
-      <datasheet>https://www.mouser.de/datasheet/2/447/YAGEO_PYu_RC_Group_51_RoHS_L_12-3313492.pdf</datasheet>
-      <description>Resistor</description>
+      <datasheet>https://www.mouser.com/datasheet/2/447/PYu_RT_1_to_0_01_RoHS_L_15-3461507.pdf</datasheet>
+      <description>100k 125mW 1%</description>
       <fields>
-        <field name="manf">Bourns</field>
-        <field name="manf#">CR0805-JW-104ELF</field>
-        <field name="mouser#">652-CR0805-JW-104ELF</field>
+        <field name="manf">YAGEO</field>
+        <field name="manf#">RT0805FRE13100KL</field>
+        <field name="mouser#">603-RT0805FRE13100KL</field>
+        <field name="Part-DB URL">https://inventory.lan/de/part/66/info</field>
+        <field name="Category">Widerstand/Dünnfilmwiderstand</field>
+        <field name="Manufacturer">YAGEO</field>
+        <field name="MPN">RT0805FRE13100KL</field>
+        <field name="Manufacturing Status">Active</field>
+        <field name="Part-DB Footprint">0805</field>
+        <field name="Mass">0.006 g</field>
+        <field name="Part-DB ID">66</field>
+        <field name="Mouser SPN">603-RT0805FRE13100KL</field>
+        <field name="Stock">4</field>
+        <field name="Storage Location">Sortierregal</field>
         <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
-        <field name="Datasheet">https://www.mouser.de/datasheet/2/447/YAGEO_PYu_RC_Group_51_RoHS_L_12-3313492.pdf</field>
-        <field name="Description">Resistor</field>
+        <field name="Datasheet">https://www.mouser.com/datasheet/2/447/PYu_RT_1_to_0_01_RoHS_L_15-3461507.pdf</field>
+        <field name="Description">100k 125mW 1%</field>
       </fields>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="manf" value="Bourns"/>
-      <property name="manf#" value="CR0805-JW-104ELF"/>
-      <property name="mouser#" value="652-CR0805-JW-104ELF"/>
+      <libsource lib="partdb" part="RT0805FRE13100KL" description="100k 125mW 1%"/>
+      <property name="manf" value="YAGEO"/>
+      <property name="manf#" value="RT0805FRE13100KL"/>
+      <property name="mouser#" value="603-RT0805FRE13100KL"/>
+      <property name="Part-DB URL" value="https://inventory.lan/de/part/66/info"/>
+      <property name="Category" value="Widerstand/Dünnfilmwiderstand"/>
+      <property name="Manufacturer" value="YAGEO"/>
+      <property name="MPN" value="RT0805FRE13100KL"/>
+      <property name="Manufacturing Status" value="Active"/>
+      <property name="Part-DB Footprint" value="0805"/>
+      <property name="Mass" value="0.006 g"/>
+      <property name="Part-DB ID" value="66"/>
+      <property name="Mouser SPN" value="603-RT0805FRE13100KL"/>
+      <property name="Stock" value="4"/>
+      <property name="Storage Location" value="Sortierregal"/>
       <property name="Sheetname" value="Main"/>
       <property name="Sheetfile" value="Main.kicad_sch"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
+      <property name="ki_fp_filters" value="Resistor_SMD:R_0805_2012Metric"/>
       <sheetpath names="/Project Architecture/Main/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/f06537ee-772d-44d3-8c50-e0ba41038c9c/"/>
       <tstamps>b03fc7cd-30db-4308-ac05-84412a5c499f</tstamps>
       <units>
@@ -1541,23 +1794,6 @@
         <pin num="MP" name="MountPin" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="Device" part="C_Small">
-      <description>Unpolarized capacitor, small symbol</description>
-      <footprints>
-        <fp>C_*</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">C</field>
-        <field name="Value">C_Small</field>
-        <field name="Footprint"/>
-        <field name="Datasheet"/>
-        <field name="Description">Unpolarized capacitor, small symbol</field>
-      </fields>
-      <pins>
-        <pin num="1" name="" type="passive"/>
-        <pin num="2" name="" type="passive"/>
-      </pins>
-    </libpart>
     <libpart lib="Device" part="FerriteBead">
       <description>Ferrite bead</description>
       <footprints>
@@ -1652,64 +1888,6 @@
         <pin num="2" name="" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="Fanstel" part="BM15C">
-      <description>nRF54L module with chip antenna</description>
-      <docs>https://static1.squarespace.com/static/561459a2e4b0b39f5cefa12e/t/66c3d7591cc204465c3f6e4f/1724110684125/BM15C+Product+Specifications.pdf</docs>
-      <fields>
-        <field name="Reference">M</field>
-        <field name="Value">BM15C</field>
-        <field name="Footprint">Fanstel:BM15C</field>
-        <field name="Datasheet">https://static1.squarespace.com/static/561459a2e4b0b39f5cefa12e/t/66c3d7591cc204465c3f6e4f/1724110684125/BM15C+Product+Specifications.pdf</field>
-        <field name="Description">nRF54L module with chip antenna</field>
-      </fields>
-      <pins>
-        <pin num="A1" name="GND" type="passive"/>
-        <pin num="A3" name="P1.09" type="bidirectional"/>
-        <pin num="A9" name="GND" type="passive"/>
-        <pin num="B1" name="GND" type="passive"/>
-        <pin num="B2" name="P1.10" type="bidirectional"/>
-        <pin num="B3" name="P1.11/AIN4" type="bidirectional"/>
-        <pin num="B4" name="P1.12/AIN5" type="bidirectional"/>
-        <pin num="B5" name="P1.13/AIN6" type="bidirectional"/>
-        <pin num="B6" name="P1.14/AIN7" type="bidirectional"/>
-        <pin num="B7" name="GND" type="passive"/>
-        <pin num="B8" name="VDD" type="power_in"/>
-        <pin num="B9" name="GND" type="passive"/>
-        <pin num="C8" name="VDD" type="power_in"/>
-        <pin num="C9" name="P1.01/32K" type="bidirectional"/>
-        <pin num="D1" name="GND" type="passive"/>
-        <pin num="D8" name="P1.00/32K" type="bidirectional"/>
-        <pin num="D9" name="P1.02/NFC1" type="bidirectional"/>
-        <pin num="E1" name="GND" type="passive"/>
-        <pin num="E8" name="P1.03/NFC2" type="bidirectional"/>
-        <pin num="E9" name="P1.04/AIN0" type="bidirectional"/>
-        <pin num="F1" name="GND" type="passive"/>
-        <pin num="F8" name="P1.05/AIN1" type="bidirectional"/>
-        <pin num="F9" name="P1.06/AIN2" type="bidirectional"/>
-        <pin num="G2" name="~{RESET}" type="bidirectional"/>
-        <pin num="G8" name="P1.08" type="bidirectional"/>
-        <pin num="G9" name="P1.07/AIN3" type="bidirectional"/>
-        <pin num="H2" name="P0.04" type="bidirectional"/>
-        <pin num="H8" name="GND" type="passive"/>
-        <pin num="H9" name="P2.00" type="bidirectional"/>
-        <pin num="J2" name="P0.03" type="bidirectional"/>
-        <pin num="J3" name="SWDIO" type="bidirectional"/>
-        <pin num="J4" name="P0.00" type="bidirectional"/>
-        <pin num="J5" name="P2.09" type="bidirectional"/>
-        <pin num="J6" name="P2.07" type="bidirectional"/>
-        <pin num="J7" name="P2.03" type="bidirectional"/>
-        <pin num="J8" name="P2.02" type="bidirectional"/>
-        <pin num="J9" name="P2.01" type="bidirectional"/>
-        <pin num="K2" name="P0.02" type="bidirectional"/>
-        <pin num="K3" name="SWDCLK" type="bidirectional"/>
-        <pin num="K4" name="P0.01" type="bidirectional"/>
-        <pin num="K5" name="P2.10" type="bidirectional"/>
-        <pin num="K6" name="P2.08" type="bidirectional"/>
-        <pin num="K7" name="P2.06" type="bidirectional"/>
-        <pin num="K8" name="P2.05" type="bidirectional"/>
-        <pin num="K9" name="P2.04" type="bidirectional"/>
-      </pins>
-    </libpart>
     <libpart lib="Microchip_Kampi" part="MCP9600">
       <description>Thermocouple to Digital Converter IC Thermocouple Input I2C Output 20-MQFN (5x5)</description>
       <docs>https://ww1.microchip.com/downloads/aemDocuments/documents/MSLD/ProductDocuments/MCP960X-Data-Sheet-20005426.pdf</docs>
@@ -1723,13 +1901,22 @@
       <pins>
         <pin num="1" name="GND" type="power_in"/>
         <pin num="2" name="VIN+" type="input"/>
+        <pin num="3" name="NC" type="no_connect"/>
         <pin num="4" name="VIN-" type="input"/>
+        <pin num="5" name="NC" type="no_connect"/>
+        <pin num="6" name="NC" type="no_connect"/>
+        <pin num="7" name="NC" type="no_connect"/>
         <pin num="8" name="VDD" type="power_in"/>
+        <pin num="9" name="NC" type="no_connect"/>
+        <pin num="10" name="NC" type="no_connect"/>
         <pin num="11" name="ALERT-1" type="output"/>
         <pin num="12" name="ALERT-2" type="output"/>
+        <pin num="13" name="NC" type="no_connect"/>
         <pin num="14" name="ALERT-3" type="output"/>
         <pin num="15" name="ALERT-4" type="output"/>
         <pin num="16" name="ADDR" type="input"/>
+        <pin num="17" name="NC" type="no_connect"/>
+        <pin num="18" name="NC" type="no_connect"/>
         <pin num="19" name="SCL" type="input"/>
         <pin num="20" name="SDA" type="bidirectional"/>
         <pin num="21" name="EP" type="passive"/>
@@ -1794,6 +1981,235 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
+    <libpart lib="partdb" part="08053G105MAT2A">
+      <description>1u 25V 20% Y5V</description>
+      <docs>https://www.mouser.com/catalog/specsheets/avx_04122018_part%20number%20explanation.pdf</docs>
+      <footprints>
+        <fp>Capacitor_SMD:C_0805_2012Metric</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">1u</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet">https://www.mouser.com/catalog/specsheets/avx_04122018_part%20number%20explanation.pdf</field>
+        <field name="Description">1u 25V 20% Y5V</field>
+        <field name="Part-DB URL">https://inventory.lan/de/part/349/info</field>
+        <field name="Category">Kondensator/MLCC</field>
+        <field name="Manufacturer">KYOCERA AVX</field>
+        <field name="MPN">08053G105MAT2A</field>
+        <field name="Manufacturing Status">Active</field>
+        <field name="Part-DB Footprint">0805</field>
+        <field name="Mass">0.006 g</field>
+        <field name="Part-DB ID">349</field>
+        <field name="manf">KYOCERA AVX</field>
+        <field name="manf#">08053G105MAT2A</field>
+        <field name="Mouser SPN">581-08053G105MAT2A</field>
+        <field name="mouser#">581-08053G105MAT2A</field>
+        <field name="Stock">0</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="partdb" part="08055C104K4Z4A">
+      <description>100n 50V X7R</description>
+      <docs>https://inventory.lan/de/part/109/info</docs>
+      <footprints>
+        <fp>Capacitor_SMD:C_0805_2012Metric</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">100n</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet">https://inventory.lan/de/part/109/info</field>
+        <field name="Description">100n 50V X7R</field>
+        <field name="Part-DB URL">https://inventory.lan/de/part/109/info</field>
+        <field name="Category">Kondensator/MLCC</field>
+        <field name="Manufacturer">KYOCERA AVX</field>
+        <field name="MPN">08055C104K4Z4A</field>
+        <field name="Manufacturing Status">Active</field>
+        <field name="Part-DB Footprint">0805</field>
+        <field name="Mass">0.006 g</field>
+        <field name="Part-DB ID">109</field>
+        <field name="manf">KYOCERA AVX</field>
+        <field name="manf#">08055C104K4Z4A</field>
+        <field name="Mouser SPN">581-08055C104K4Z4A</field>
+        <field name="mouser#">581-08055C104K4Z4A</field>
+        <field name="Stock">6</field>
+        <field name="Storage Location">Sortierregal</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="partdb" part="0805X7R106KT1AT">
+      <description>10u 25V 10% X7R</description>
+      <docs>https://inventory.lan/de/part/331/info</docs>
+      <footprints>
+        <fp>Capacitor_SMD:C_0805_2012Metric</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">10u</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet">https://inventory.lan/de/part/331/info</field>
+        <field name="Description">10u 25V 10% X7R</field>
+        <field name="Part-DB URL">https://inventory.lan/de/part/331/info</field>
+        <field name="Category">Kondensator/MLCC</field>
+        <field name="Manufacturer">KYOCERA AVX</field>
+        <field name="MPN">0805X7R106KT1AT</field>
+        <field name="Manufacturing Status">Active</field>
+        <field name="Part-DB Footprint">0805</field>
+        <field name="Part-DB ID">331</field>
+        <field name="manf">KYOCERA AVX</field>
+        <field name="manf#">0805X7R106KT1AT</field>
+        <field name="Mouser SPN">581-0805X7R106KT1AT</field>
+        <field name="mouser#">581-0805X7R106KT1AT</field>
+        <field name="Stock">0</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="partdb" part="BM15C">
+      <description>Bluetooth-Module – 802.15.1 nRF54L15 BLE 6.0 module with a chip antenna</description>
+      <docs>https://www.mouser.com/datasheet/2/915/BM15C_2bProduct_2bSpecifications-3555318.pdf</docs>
+      <footprints>
+        <fp>Fanstel:BM15C</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">BM15C</field>
+        <field name="Footprint">Fanstel:BM15C</field>
+        <field name="Datasheet">https://www.mouser.com/datasheet/2/915/BM15C_2bProduct_2bSpecifications-3555318.pdf</field>
+        <field name="Description">Bluetooth-Module – 802.15.1 nRF54L15 BLE 6.0 module with a chip antenna</field>
+        <field name="Part-DB URL">https://inventory.lan/de/part/52/info</field>
+        <field name="Category">Modul/Fanstel</field>
+        <field name="Manufacturer">Fanstel</field>
+        <field name="MPN">BM15C</field>
+        <field name="Manufacturing Status">Active</field>
+        <field name="Part-DB Footprint">BM15C</field>
+        <field name="Part-DB ID">52</field>
+        <field name="manf">Fanstel</field>
+        <field name="manf#">BM15C</field>
+        <field name="Mouser SPN">308-BM15C</field>
+        <field name="mouser#">308-BM15C</field>
+        <field name="Stock">2</field>
+        <field name="Storage Location">Sortierregal</field>
+      </fields>
+      <pins>
+        <pin num="A1" name="GND" type="passive"/>
+        <pin num="A3" name="P1.09" type="bidirectional"/>
+        <pin num="A9" name="GND" type="passive"/>
+        <pin num="B1" name="GND" type="passive"/>
+        <pin num="B2" name="P1.10" type="bidirectional"/>
+        <pin num="B3" name="P1.11/AIN4" type="bidirectional"/>
+        <pin num="B4" name="P1.12/AIN5" type="bidirectional"/>
+        <pin num="B5" name="P1.13/AIN6" type="bidirectional"/>
+        <pin num="B6" name="P1.14/AIN7" type="bidirectional"/>
+        <pin num="B7" name="GND" type="passive"/>
+        <pin num="B8" name="VDD" type="power_in"/>
+        <pin num="B9" name="GND" type="passive"/>
+        <pin num="C8" name="VDD" type="power_in"/>
+        <pin num="C9" name="P1.01/32K" type="bidirectional"/>
+        <pin num="D1" name="GND" type="passive"/>
+        <pin num="D8" name="P1.00/32K" type="bidirectional"/>
+        <pin num="D9" name="P1.02/NFC1" type="bidirectional"/>
+        <pin num="E1" name="GND" type="passive"/>
+        <pin num="E8" name="P1.03/NFC2" type="bidirectional"/>
+        <pin num="E9" name="P1.04/AIN0" type="bidirectional"/>
+        <pin num="F1" name="GND" type="passive"/>
+        <pin num="F8" name="P1.05/AIN1" type="bidirectional"/>
+        <pin num="F9" name="P1.06/AIN2" type="bidirectional"/>
+        <pin num="G2" name="~{RESET}" type="bidirectional"/>
+        <pin num="G8" name="P1.08" type="bidirectional"/>
+        <pin num="G9" name="P1.07/AIN3" type="bidirectional"/>
+        <pin num="H2" name="P0.04" type="bidirectional"/>
+        <pin num="H8" name="GND" type="passive"/>
+        <pin num="H9" name="P2.00" type="bidirectional"/>
+        <pin num="J2" name="P0.03" type="bidirectional"/>
+        <pin num="J3" name="SWDIO" type="bidirectional"/>
+        <pin num="J4" name="P0.00" type="bidirectional"/>
+        <pin num="J5" name="P2.09" type="bidirectional"/>
+        <pin num="J6" name="P2.07" type="bidirectional"/>
+        <pin num="J7" name="P2.03" type="bidirectional"/>
+        <pin num="J8" name="P2.02" type="bidirectional"/>
+        <pin num="J9" name="P2.01" type="bidirectional"/>
+        <pin num="K2" name="P0.02" type="bidirectional"/>
+        <pin num="K3" name="SWDCLK" type="bidirectional"/>
+        <pin num="K4" name="P0.01" type="bidirectional"/>
+        <pin num="K5" name="P2.10" type="bidirectional"/>
+        <pin num="K6" name="P2.08" type="bidirectional"/>
+        <pin num="K7" name="P2.06" type="bidirectional"/>
+        <pin num="K8" name="P2.05" type="bidirectional"/>
+        <pin num="K9" name="P2.04" type="bidirectional"/>
+      </pins>
+    </libpart>
+    <libpart lib="partdb" part="MCJCT21GCB7225MTPA1J">
+      <description>2u2 25V 20% X7R</description>
+      <docs>https://www.mouser.com/catalog/specsheets/Taiyo%20Yuden_1102023_MC_mlcc_all_e.pdf</docs>
+      <footprints>
+        <fp>Capacitor_SMD:C_0805_2012Metric</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">Device:C</field>
+        <field name="Value">2u2</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet">https://www.mouser.com/catalog/specsheets/Taiyo%20Yuden_1102023_MC_mlcc_all_e.pdf</field>
+        <field name="Description">2u2 25V 20% X7R</field>
+        <field name="Part-DB URL">https://inventory.lan/de/part/328/info</field>
+        <field name="Category">Kondensator/MLCC</field>
+        <field name="Manufacturer">TAIYO YUDEN</field>
+        <field name="MPN">MCJCT21GCB7225MTPA1J</field>
+        <field name="Manufacturing Status">Active</field>
+        <field name="Part-DB Footprint">0805</field>
+        <field name="Part-DB ID">328</field>
+        <field name="manf">TAIYO YUDEN</field>
+        <field name="manf#">MCJCT21GCB7225MTPA1J</field>
+        <field name="Mouser SPN">963-T21GCB7225MTPA1J</field>
+        <field name="mouser#">963-T21GCB7225MTPA1J</field>
+        <field name="Stock">0</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="partdb" part="RT0805FRE13100KL">
+      <description>100k 125mW 1%</description>
+      <docs>https://www.mouser.com/datasheet/2/447/PYu_RT_1_to_0_01_RoHS_L_15-3461507.pdf</docs>
+      <footprints>
+        <fp>Resistor_SMD:R_0805_2012Metric</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">100k</field>
+        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
+        <field name="Datasheet">https://www.mouser.com/datasheet/2/447/PYu_RT_1_to_0_01_RoHS_L_15-3461507.pdf</field>
+        <field name="Description">100k 125mW 1%</field>
+        <field name="Part-DB URL">https://inventory.lan/de/part/66/info</field>
+        <field name="Category">Widerstand/Dünnfilmwiderstand</field>
+        <field name="Manufacturer">YAGEO</field>
+        <field name="MPN">RT0805FRE13100KL</field>
+        <field name="Manufacturing Status">Active</field>
+        <field name="Part-DB Footprint">0805</field>
+        <field name="Mass">0.006 g</field>
+        <field name="Part-DB ID">66</field>
+        <field name="manf">YAGEO</field>
+        <field name="manf#">RT0805FRE13100KL</field>
+        <field name="Mouser SPN">603-RT0805FRE13100KL</field>
+        <field name="mouser#">603-RT0805FRE13100KL</field>
+        <field name="Stock">4</field>
+        <field name="Storage Location">Sortierregal</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
   </libparts>
   <libraries>
     <library logical="Connector">
@@ -1836,7 +2252,7 @@
     </net>
     <net code="3" name="/Project Architecture/Main/PMIC-INT" class="Default">
       <node ref="IC301" pin="11" pinfunction="GPIO4_11" pintype="bidirectional"/>
-      <node ref="M701" pin="H9" pinfunction="P2.00_H9" pintype="bidirectional"/>
+      <node ref="M701" pin="J4" pinfunction="P0.00_J4" pintype="bidirectional"/>
     </net>
     <net code="4" name="/Project Architecture/Main/SCL" class="Default">
       <node ref="IC301" pin="14" pinfunction="SCL_14" pintype="input"/>
@@ -1868,6 +2284,7 @@
       <node ref="C304" pin="1" pintype="passive"/>
       <node ref="C306" pin="1" pintype="passive"/>
       <node ref="C307" pin="1" pintype="passive"/>
+      <node ref="D401" pin="1" pinfunction="A_1" pintype="passive"/>
       <node ref="IC301" pin="1" pinfunction="VOUT1_1" pintype="power_out"/>
       <node ref="IC301" pin="20" pinfunction="V_{SYS}_20" pintype="power_in"/>
       <node ref="IC301" pin="4" pinfunction="V_{DD}_4" pintype="power_in"/>
@@ -1912,65 +2329,64 @@
       <node ref="X701" pin="3" pinfunction="GND_3" pintype="power_in"/>
       <node ref="X701" pin="5" pinfunction="GND_5" pintype="passive"/>
     </net>
-    <net code="11" name="Net-(D401-A)" class="Default">
-      <node ref="C301" pin="1" pintype="passive"/>
-      <node ref="D401" pin="1" pinfunction="A_1" pintype="passive"/>
-      <node ref="IC301" pin="21" pinfunction="V_{BUS}_21" pintype="power_out"/>
-      <node ref="X301" pin="A4" pinfunction="VBUS_A4" pintype="passive"/>
-      <node ref="X301" pin="A9" pinfunction="VBUS_A9" pintype="passive"/>
-      <node ref="X301" pin="B4" pinfunction="VBUS_B4" pintype="passive"/>
-      <node ref="X301" pin="B9" pinfunction="VBUS_B9" pintype="passive"/>
-    </net>
-    <net code="12" name="Net-(D401-BK)" class="Default">
+    <net code="11" name="Net-(D401-BK)" class="Default">
       <node ref="D401" pin="4" pinfunction="BK_4" pintype="passive"/>
       <node ref="R403" pin="2" pintype="passive"/>
     </net>
-    <net code="13" name="Net-(D401-GK)" class="Default">
+    <net code="12" name="Net-(D401-GK)" class="Default">
       <node ref="D401" pin="3" pinfunction="GK_3" pintype="passive"/>
       <node ref="R402" pin="2" pintype="passive"/>
     </net>
-    <net code="14" name="Net-(D401-RK)" class="Default">
+    <net code="13" name="Net-(D401-RK)" class="Default">
       <node ref="D401" pin="2" pinfunction="RK_2" pintype="passive"/>
       <node ref="R401" pin="2" pintype="passive"/>
     </net>
-    <net code="15" name="Net-(IC301-CC1)" class="Default">
+    <net code="14" name="Net-(IC301-CC1)" class="Default">
       <node ref="IC301" pin="23" pinfunction="CC1_23" pintype="input"/>
       <node ref="X301" pin="A5" pinfunction="CC1_A5" pintype="bidirectional"/>
     </net>
-    <net code="16" name="Net-(IC301-CC2)" class="Default">
+    <net code="15" name="Net-(IC301-CC2)" class="Default">
       <node ref="IC301" pin="24" pinfunction="CC2_24" pintype="input"/>
       <node ref="X301" pin="B5" pinfunction="CC2_B5" pintype="bidirectional"/>
     </net>
-    <net code="17" name="Net-(IC301-LED0)" class="Default">
+    <net code="16" name="Net-(IC301-LED0)" class="Default">
       <node ref="IC301" pin="25" pinfunction="LED0_25" pintype="output"/>
       <node ref="R403" pin="1" pintype="passive"/>
     </net>
-    <net code="18" name="Net-(IC301-LED1)" class="Default">
+    <net code="17" name="Net-(IC301-LED1)" class="Default">
       <node ref="IC301" pin="26" pinfunction="LED1_26" pintype="output"/>
       <node ref="R402" pin="1" pintype="passive"/>
     </net>
-    <net code="19" name="Net-(IC301-LED2)" class="Default">
+    <net code="18" name="Net-(IC301-LED2)" class="Default">
       <node ref="IC301" pin="27" pinfunction="LED2_27" pintype="output"/>
       <node ref="R401" pin="1" pintype="passive"/>
     </net>
-    <net code="20" name="Net-(IC301-SW2)" class="Default">
+    <net code="19" name="Net-(IC301-SW2)" class="Default">
       <node ref="IC301" pin="5" pinfunction="SW2_5" pintype="input"/>
       <node ref="L301" pin="2" pinfunction="2_2" pintype="passive"/>
     </net>
-    <net code="21" name="Net-(IC301-VOUT2)" class="Default">
+    <net code="20" name="Net-(IC301-VOUT2)" class="Default">
       <node ref="C305" pin="1" pintype="passive"/>
       <node ref="IC301" pin="32" pinfunction="VOUT2_32" pintype="power_out"/>
       <node ref="L301" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="NT301" pin="1" pinfunction="1_1" pintype="passive"/>
     </net>
-    <net code="22" name="Net-(IC301-VSET2)" class="Default">
+    <net code="21" name="Net-(IC301-VSET2)" class="Default">
       <node ref="IC301" pin="16" pinfunction="VSET2_16" pintype="input"/>
       <node ref="R301" pin="2" pintype="passive"/>
     </net>
-    <net code="23" name="Net-(IC301-V_{BAT})" class="Default">
+    <net code="22" name="Net-(IC301-V_{BAT})" class="Default">
       <node ref="C303" pin="1" pintype="passive"/>
       <node ref="IC301" pin="19" pinfunction="V_{BAT}_19" pintype="power_out"/>
       <node ref="X302" pin="1" pinfunction="Pin_1_1" pintype="passive"/>
+    </net>
+    <net code="23" name="Net-(IC301-V_{BUS})" class="Default">
+      <node ref="C301" pin="1" pintype="passive"/>
+      <node ref="IC301" pin="21" pinfunction="V_{BUS}_21" pintype="power_out"/>
+      <node ref="X301" pin="A4" pinfunction="VBUS_A4" pintype="passive"/>
+      <node ref="X301" pin="A9" pinfunction="VBUS_A9" pintype="passive"/>
+      <node ref="X301" pin="B4" pinfunction="VBUS_B4" pintype="passive"/>
+      <node ref="X301" pin="B9" pinfunction="VBUS_B9" pintype="passive"/>
     </net>
     <net code="24" name="Net-(IC701-VIN+)" class="Default">
       <node ref="FB701" pin="1" pintype="passive"/>
@@ -2042,109 +2458,136 @@
     <net code="43" name="unconnected-(IC701-ALERT-4-Pad15)" class="Default">
       <node ref="IC701" pin="15" pinfunction="ALERT-4_15" pintype="output+no_connect"/>
     </net>
-    <net code="44" name="unconnected-(M701-P0.00-PadJ4)" class="Default">
-      <node ref="M701" pin="J4" pinfunction="P0.00_J4" pintype="bidirectional+no_connect"/>
+    <net code="44" name="unconnected-(IC701-NC-Pad3)" class="Default">
+      <node ref="IC701" pin="3" pinfunction="NC_3" pintype="no_connect"/>
     </net>
-    <net code="45" name="unconnected-(M701-P0.01-PadK4)" class="Default">
+    <net code="45" name="unconnected-(IC701-NC-Pad5)" class="Default">
+      <node ref="IC701" pin="5" pinfunction="NC_5" pintype="no_connect"/>
+    </net>
+    <net code="46" name="unconnected-(IC701-NC-Pad6)" class="Default">
+      <node ref="IC701" pin="6" pinfunction="NC_6" pintype="no_connect"/>
+    </net>
+    <net code="47" name="unconnected-(IC701-NC-Pad7)" class="Default">
+      <node ref="IC701" pin="7" pinfunction="NC_7" pintype="no_connect"/>
+    </net>
+    <net code="48" name="unconnected-(IC701-NC-Pad9)" class="Default">
+      <node ref="IC701" pin="9" pinfunction="NC_9" pintype="no_connect"/>
+    </net>
+    <net code="49" name="unconnected-(IC701-NC-Pad10)" class="Default">
+      <node ref="IC701" pin="10" pinfunction="NC_10" pintype="no_connect"/>
+    </net>
+    <net code="50" name="unconnected-(IC701-NC-Pad13)" class="Default">
+      <node ref="IC701" pin="13" pinfunction="NC_13" pintype="no_connect"/>
+    </net>
+    <net code="51" name="unconnected-(IC701-NC-Pad17)" class="Default">
+      <node ref="IC701" pin="17" pinfunction="NC_17" pintype="no_connect"/>
+    </net>
+    <net code="52" name="unconnected-(IC701-NC-Pad18)" class="Default">
+      <node ref="IC701" pin="18" pinfunction="NC_18" pintype="no_connect"/>
+    </net>
+    <net code="53" name="unconnected-(M701-P0.01-PadK4)" class="Default">
       <node ref="M701" pin="K4" pinfunction="P0.01_K4" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="46" name="unconnected-(M701-P0.02-PadK2)" class="Default">
+    <net code="54" name="unconnected-(M701-P0.02-PadK2)" class="Default">
       <node ref="M701" pin="K2" pinfunction="P0.02_K2" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="47" name="unconnected-(M701-P1.00/32K-PadD8)" class="Default">
+    <net code="55" name="unconnected-(M701-P1.00/32K-PadD8)" class="Default">
       <node ref="M701" pin="D8" pinfunction="P1.00/32K_D8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="48" name="unconnected-(M701-P1.01/32K-PadC9)" class="Default">
+    <net code="56" name="unconnected-(M701-P1.01/32K-PadC9)" class="Default">
       <node ref="M701" pin="C9" pinfunction="P1.01/32K_C9" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="49" name="unconnected-(M701-P1.02/NFC1-PadD9)" class="Default">
+    <net code="57" name="unconnected-(M701-P1.02/NFC1-PadD9)" class="Default">
       <node ref="M701" pin="D9" pinfunction="P1.02/NFC1_D9" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="50" name="unconnected-(M701-P1.03/NFC2-PadE8)" class="Default">
+    <net code="58" name="unconnected-(M701-P1.03/NFC2-PadE8)" class="Default">
       <node ref="M701" pin="E8" pinfunction="P1.03/NFC2_E8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="51" name="unconnected-(M701-P1.05/AIN1-PadF8)" class="Default">
+    <net code="59" name="unconnected-(M701-P1.05/AIN1-PadF8)" class="Default">
       <node ref="M701" pin="F8" pinfunction="P1.05/AIN1_F8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="52" name="unconnected-(M701-P1.06/AIN2-PadF9)" class="Default">
+    <net code="60" name="unconnected-(M701-P1.06/AIN2-PadF9)" class="Default">
       <node ref="M701" pin="F9" pinfunction="P1.06/AIN2_F9" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="53" name="unconnected-(M701-P1.07/AIN3-PadG9)" class="Default">
+    <net code="61" name="unconnected-(M701-P1.07/AIN3-PadG9)" class="Default">
       <node ref="M701" pin="G9" pinfunction="P1.07/AIN3_G9" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="54" name="unconnected-(M701-P1.08-PadG8)" class="Default">
+    <net code="62" name="unconnected-(M701-P1.08-PadG8)" class="Default">
       <node ref="M701" pin="G8" pinfunction="P1.08_G8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="55" name="unconnected-(M701-P1.09-PadA3)" class="Default">
+    <net code="63" name="unconnected-(M701-P1.09-PadA3)" class="Default">
       <node ref="M701" pin="A3" pinfunction="P1.09_A3" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="56" name="unconnected-(M701-P1.10-PadB2)" class="Default">
+    <net code="64" name="unconnected-(M701-P1.10-PadB2)" class="Default">
       <node ref="M701" pin="B2" pinfunction="P1.10_B2" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="57" name="unconnected-(M701-P1.11/AIN4-PadB3)" class="Default">
+    <net code="65" name="unconnected-(M701-P1.11/AIN4-PadB3)" class="Default">
       <node ref="M701" pin="B3" pinfunction="P1.11/AIN4_B3" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="58" name="unconnected-(M701-P1.12/AIN5-PadB4)" class="Default">
+    <net code="66" name="unconnected-(M701-P1.12/AIN5-PadB4)" class="Default">
       <node ref="M701" pin="B4" pinfunction="P1.12/AIN5_B4" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="59" name="unconnected-(M701-P1.13/AIN6-PadB5)" class="Default">
+    <net code="67" name="unconnected-(M701-P1.13/AIN6-PadB5)" class="Default">
       <node ref="M701" pin="B5" pinfunction="P1.13/AIN6_B5" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="60" name="unconnected-(M701-P2.01-PadJ9)" class="Default">
+    <net code="68" name="unconnected-(M701-P2.00-PadH9)" class="Default">
+      <node ref="M701" pin="H9" pinfunction="P2.00_H9" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="69" name="unconnected-(M701-P2.01-PadJ9)" class="Default">
       <node ref="M701" pin="J9" pinfunction="P2.01_J9" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="61" name="unconnected-(M701-P2.02-PadJ8)" class="Default">
+    <net code="70" name="unconnected-(M701-P2.02-PadJ8)" class="Default">
       <node ref="M701" pin="J8" pinfunction="P2.02_J8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="62" name="unconnected-(M701-P2.03-PadJ7)" class="Default">
+    <net code="71" name="unconnected-(M701-P2.03-PadJ7)" class="Default">
       <node ref="M701" pin="J7" pinfunction="P2.03_J7" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="63" name="unconnected-(M701-P2.04-PadK9)" class="Default">
+    <net code="72" name="unconnected-(M701-P2.04-PadK9)" class="Default">
       <node ref="M701" pin="K9" pinfunction="P2.04_K9" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="64" name="unconnected-(M701-P2.05-PadK8)" class="Default">
+    <net code="73" name="unconnected-(M701-P2.05-PadK8)" class="Default">
       <node ref="M701" pin="K8" pinfunction="P2.05_K8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="65" name="unconnected-(M701-P2.06-PadK7)" class="Default">
+    <net code="74" name="unconnected-(M701-P2.06-PadK7)" class="Default">
       <node ref="M701" pin="K7" pinfunction="P2.06_K7" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="66" name="unconnected-(M701-P2.07-PadJ6)" class="Default">
+    <net code="75" name="unconnected-(M701-P2.07-PadJ6)" class="Default">
       <node ref="M701" pin="J6" pinfunction="P2.07_J6" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="67" name="unconnected-(M701-P2.08-PadK6)" class="Default">
+    <net code="76" name="unconnected-(M701-P2.08-PadK6)" class="Default">
       <node ref="M701" pin="K6" pinfunction="P2.08_K6" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="68" name="unconnected-(M701-P2.09-PadJ5)" class="Default">
+    <net code="77" name="unconnected-(M701-P2.09-PadJ5)" class="Default">
       <node ref="M701" pin="J5" pinfunction="P2.09_J5" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="69" name="unconnected-(M701-P2.10-PadK5)" class="Default">
+    <net code="78" name="unconnected-(M701-P2.10-PadK5)" class="Default">
       <node ref="M701" pin="K5" pinfunction="P2.10_K5" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="70" name="unconnected-(X301-D+-PadA6)" class="Default">
+    <net code="79" name="unconnected-(X301-D+-PadA6)" class="Default">
       <node ref="X301" pin="A6" pinfunction="D+_A6" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="71" name="unconnected-(X301-D+-PadB6)" class="Default">
+    <net code="80" name="unconnected-(X301-D+-PadB6)" class="Default">
       <node ref="X301" pin="B6" pinfunction="D+_B6" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="72" name="unconnected-(X301-D--PadA7)" class="Default">
+    <net code="81" name="unconnected-(X301-D--PadA7)" class="Default">
       <node ref="X301" pin="A7" pinfunction="D-_A7" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="73" name="unconnected-(X301-D--PadB7)" class="Default">
+    <net code="82" name="unconnected-(X301-D--PadB7)" class="Default">
       <node ref="X301" pin="B7" pinfunction="D-_B7" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="74" name="unconnected-(X302-MountPin-PadMP)" class="Default">
+    <net code="83" name="unconnected-(X302-MountPin-PadMP)" class="Default">
       <node ref="X302" pin="MP" pinfunction="MountPin_MP" pintype="passive+no_connect"/>
     </net>
-    <net code="75" name="unconnected-(X701-GNDDetect-Pad9)" class="Default">
+    <net code="84" name="unconnected-(X701-GNDDetect-Pad9)" class="Default">
       <node ref="X701" pin="9" pinfunction="GNDDetect_9" pintype="passive+no_connect"/>
     </net>
-    <net code="76" name="unconnected-(X701-KEY-Pad7)" class="Default">
+    <net code="85" name="unconnected-(X701-KEY-Pad7)" class="Default">
       <node ref="X701" pin="7" pinfunction="KEY_7" pintype="no_connect"/>
     </net>
-    <net code="77" name="unconnected-(X701-NC/TDI-Pad8)" class="Default">
+    <net code="86" name="unconnected-(X701-NC/TDI-Pad8)" class="Default">
       <node ref="X701" pin="8" pinfunction="NC/TDI_8" pintype="output+no_connect"/>
     </net>
-    <net code="78" name="unconnected-(X701-SWO/TDO-Pad6)" class="Default">
+    <net code="87" name="unconnected-(X701-SWO/TDO-Pad6)" class="Default">
       <node ref="X701" pin="6" pinfunction="SWO/TDO_6" pintype="input+no_connect"/>
     </net>
   </nets>
